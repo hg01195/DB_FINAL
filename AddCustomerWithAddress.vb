@@ -3,7 +3,7 @@ Imports System.Diagnostics.Eventing
 Imports System.Net.Mime.MediaTypeNames
 
 Public Class AddCustomerWithAddress
-    Dim connection As New SqlConnection("Server= DESKTOP-IGRIGM7; Database = Database_Final; Integrated Security = true")
+    Dim connection As New SqlConnection(SQLcONN)
 
     'ADD CUSTOMER
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles AddCustomerButton.Click

@@ -5,7 +5,7 @@ Imports System.Net.Mime.MediaTypeNames
 Public Class UpdateAddressForm
 
     'THIS NEEDS FORM BEFORE IT DONE BEFORE TESTING
-    Dim connection As New SqlConnection("Server= DESKTOP-IGRIGM7; Database = Database_Final; Integrated Security = true")
+    Dim connection As New SqlConnection(SQLcONN)
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
         connection.Open()
 
