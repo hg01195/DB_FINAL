@@ -8,4 +8,14 @@
         ServicesForm.Show()
         Me.Close()
     End Sub
+
+    Private Sub AccountInformationButton_Click(sender As Object, e As EventArgs) Handles AccountInformationButton.Click
+        OrderItemsForm.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub RewardsProgramButton_Click(sender As Object, e As EventArgs) Handles RewardsProgramButton.Click
+        RewardMembersForm.Show()
+        Me.Close()
+    End Sub
 End Class

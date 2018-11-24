@@ -3,6 +3,7 @@
     Public staffID
     Public adminID
     Public FirstName
+    Public addressID
 
-    Public SQLcONN = "Server= laptop-s17tou1u\hiyasql; Database = Database_Final; Integrated Security = true"
+    Public SQLcONN = "Server= DESKTOP-IGRIGM7; Database = Database_Final; Integrated Security = true"
 End Module

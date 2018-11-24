@@ -4,7 +4,7 @@ Imports System.Net.Mime.MediaTypeNames
 
 Public Class CustomerForm
     'This opens the connection to the database. If you use it change the server name to your server name
-    ' Dim connection As New SqlConnection(SQLcONN)
+    Dim connection As New SqlConnection(SQLcONN)
 
     'SUBMIT
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
@@ -122,12 +122,8 @@ Public Class CustomerForm
     End Sub
 
     Private Sub AddressGuiButton_Click(sender As Object, e As EventArgs) Handles AddressGuiButton.Click
-        AddressForm.Show()
+        UpdateAddressForm.Show()
         Me.Close()
-    End Sub
-
-    Private Sub CustomerForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 
     Private Sub btnOrder_Click(sender As Object, e As EventArgs) Handles btnOrder.Click

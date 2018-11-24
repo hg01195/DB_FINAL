@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class UpdateAddressForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class UpdateAddressForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.BillingPhone_TB = New System.Windows.Forms.TextBox()
@@ -50,7 +50,6 @@ Partial Class UpdateAddressForm
         Me.Label8 = New System.Windows.Forms.Label()
         Me.UpdateButton = New System.Windows.Forms.Button()
         Me.CloseButton = New System.Windows.Forms.Button()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'Label5
@@ -70,7 +69,6 @@ Partial Class UpdateAddressForm
         Me.BillingPhone_TB.Name = "BillingPhone_TB"
         Me.BillingPhone_TB.Size = New System.Drawing.Size(100, 22)
         Me.BillingPhone_TB.TabIndex = 68
-        Me.BillingPhone_TB.Visible = False
         '
         'BillingZip_TB
         '
@@ -78,7 +76,6 @@ Partial Class UpdateAddressForm
         Me.BillingZip_TB.Name = "BillingZip_TB"
         Me.BillingZip_TB.Size = New System.Drawing.Size(100, 22)
         Me.BillingZip_TB.TabIndex = 67
-        Me.BillingZip_TB.Visible = False
         '
         'BillingState_TB
         '
@@ -86,7 +83,6 @@ Partial Class UpdateAddressForm
         Me.BillingState_TB.Name = "BillingState_TB"
         Me.BillingState_TB.Size = New System.Drawing.Size(100, 22)
         Me.BillingState_TB.TabIndex = 66
-        Me.BillingState_TB.Visible = False
         '
         'BillingCity_TB
         '
@@ -94,7 +90,6 @@ Partial Class UpdateAddressForm
         Me.BillingCity_TB.Name = "BillingCity_TB"
         Me.BillingCity_TB.Size = New System.Drawing.Size(100, 22)
         Me.BillingCity_TB.TabIndex = 65
-        Me.BillingCity_TB.Visible = False
         '
         'BillingLine2_TB
         '
@@ -102,7 +97,6 @@ Partial Class UpdateAddressForm
         Me.BillingLine2_TB.Name = "BillingLine2_TB"
         Me.BillingLine2_TB.Size = New System.Drawing.Size(100, 22)
         Me.BillingLine2_TB.TabIndex = 64
-        Me.BillingLine2_TB.Visible = False
         '
         'BillingLine1_TB
         '
@@ -110,7 +104,6 @@ Partial Class UpdateAddressForm
         Me.BillingLine1_TB.Name = "BillingLine1_TB"
         Me.BillingLine1_TB.Size = New System.Drawing.Size(100, 22)
         Me.BillingLine1_TB.TabIndex = 63
-        Me.BillingLine1_TB.Visible = False
         '
         'Label6
         '
@@ -238,7 +231,7 @@ Partial Class UpdateAddressForm
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(-7, 446)
+        Me.Label1.Location = New System.Drawing.Point(-5, 446)
         Me.Label1.MaximumSize = New System.Drawing.Size(120, 0)
         Me.Label1.MinimumSize = New System.Drawing.Size(120, 18)
         Me.Label1.Name = "Label1"
@@ -309,9 +302,9 @@ Partial Class UpdateAddressForm
         'UpdateButton
         '
         Me.UpdateButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UpdateButton.Location = New System.Drawing.Point(36, 496)
+        Me.UpdateButton.Location = New System.Drawing.Point(20, 496)
         Me.UpdateButton.Name = "UpdateButton"
-        Me.UpdateButton.Size = New System.Drawing.Size(77, 34)
+        Me.UpdateButton.Size = New System.Drawing.Size(95, 34)
         Me.UpdateButton.TabIndex = 76
         Me.UpdateButton.Text = "Update"
         Me.UpdateButton.UseVisualStyleBackColor = True
@@ -321,27 +314,16 @@ Partial Class UpdateAddressForm
         Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CloseButton.Location = New System.Drawing.Point(137, 496)
         Me.CloseButton.Name = "CloseButton"
-        Me.CloseButton.Size = New System.Drawing.Size(77, 34)
+        Me.CloseButton.Size = New System.Drawing.Size(100, 34)
         Me.CloseButton.TabIndex = 77
         Me.CloseButton.Text = "Close"
         Me.CloseButton.UseVisualStyleBackColor = True
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(45, 227)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(185, 21)
-        Me.CheckBox1.TabIndex = 78
-        Me.CheckBox1.Text = "Billing Same as Shipping"
-        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'UpdateAddressForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(272, 537)
-        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.CloseButton)
         Me.Controls.Add(Me.UpdateButton)
         Me.Controls.Add(Me.Label1)
@@ -405,5 +387,4 @@ Partial Class UpdateAddressForm
     Friend WithEvents Label8 As Label
     Friend WithEvents UpdateButton As Button
     Friend WithEvents CloseButton As Button
-    Friend WithEvents CheckBox1 As CheckBox
 End Class
