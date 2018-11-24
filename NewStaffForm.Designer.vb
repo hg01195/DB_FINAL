@@ -39,11 +39,14 @@ Partial Class NewStaffForm
         Me.custIDTextBox = New System.Windows.Forms.TextBox()
         Me.rewardsIDTextBox = New System.Windows.Forms.TextBox()
         Me.passwordTextBox = New System.Windows.Forms.TextBox()
+        Me.getButton = New System.Windows.Forms.Button()
+        Me.updateButton = New System.Windows.Forms.Button()
+        Me.deleteButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'backButton
         '
-        Me.backButton.Location = New System.Drawing.Point(365, 271)
+        Me.backButton.Location = New System.Drawing.Point(112, 287)
         Me.backButton.Name = "backButton"
         Me.backButton.Size = New System.Drawing.Size(75, 23)
         Me.backButton.TabIndex = 0
@@ -52,16 +55,16 @@ Partial Class NewStaffForm
         '
         'logOutButton
         '
-        Me.logOutButton.Location = New System.Drawing.Point(365, 12)
+        Me.logOutButton.Location = New System.Drawing.Point(243, 16)
         Me.logOutButton.Name = "logOutButton"
-        Me.logOutButton.Size = New System.Drawing.Size(75, 23)
+        Me.logOutButton.Size = New System.Drawing.Size(88, 23)
         Me.logOutButton.TabIndex = 1
         Me.logOutButton.Text = "Log Out"
         Me.logOutButton.UseVisualStyleBackColor = True
         '
         'submitButton
         '
-        Me.submitButton.Location = New System.Drawing.Point(12, 271)
+        Me.submitButton.Location = New System.Drawing.Point(31, 258)
         Me.submitButton.Name = "submitButton"
         Me.submitButton.Size = New System.Drawing.Size(75, 23)
         Me.submitButton.TabIndex = 2
@@ -71,7 +74,7 @@ Partial Class NewStaffForm
         'fName
         '
         Me.fName.AutoSize = True
-        Me.fName.Location = New System.Drawing.Point(117, 52)
+        Me.fName.Location = New System.Drawing.Point(28, 82)
         Me.fName.Name = "fName"
         Me.fName.Size = New System.Drawing.Size(76, 17)
         Me.fName.TabIndex = 3
@@ -80,7 +83,7 @@ Partial Class NewStaffForm
         'lName
         '
         Me.lName.AutoSize = True
-        Me.lName.Location = New System.Drawing.Point(117, 80)
+        Me.lName.Location = New System.Drawing.Point(28, 110)
         Me.lName.Name = "lName"
         Me.lName.Size = New System.Drawing.Size(76, 17)
         Me.lName.TabIndex = 4
@@ -89,7 +92,7 @@ Partial Class NewStaffForm
         'empID
         '
         Me.empID.AutoSize = True
-        Me.empID.Location = New System.Drawing.Point(117, 136)
+        Me.empID.Location = New System.Drawing.Point(28, 54)
         Me.empID.Name = "empID"
         Me.empID.Size = New System.Drawing.Size(87, 17)
         Me.empID.TabIndex = 5
@@ -98,7 +101,7 @@ Partial Class NewStaffForm
         'custID
         '
         Me.custID.AutoSize = True
-        Me.custID.Location = New System.Drawing.Point(117, 164)
+        Me.custID.Location = New System.Drawing.Point(28, 168)
         Me.custID.Name = "custID"
         Me.custID.Size = New System.Drawing.Size(85, 17)
         Me.custID.TabIndex = 6
@@ -107,7 +110,7 @@ Partial Class NewStaffForm
         'rewardsID
         '
         Me.rewardsID.AutoSize = True
-        Me.rewardsID.Location = New System.Drawing.Point(117, 192)
+        Me.rewardsID.Location = New System.Drawing.Point(28, 196)
         Me.rewardsID.Name = "rewardsID"
         Me.rewardsID.Size = New System.Drawing.Size(80, 17)
         Me.rewardsID.TabIndex = 7
@@ -116,7 +119,7 @@ Partial Class NewStaffForm
         'password
         '
         Me.password.AutoSize = True
-        Me.password.Location = New System.Drawing.Point(117, 220)
+        Me.password.Location = New System.Drawing.Point(28, 224)
         Me.password.Name = "password"
         Me.password.Size = New System.Drawing.Size(69, 17)
         Me.password.TabIndex = 8
@@ -125,7 +128,7 @@ Partial Class NewStaffForm
         'city
         '
         Me.city.AutoSize = True
-        Me.city.Location = New System.Drawing.Point(117, 108)
+        Me.city.Location = New System.Drawing.Point(28, 140)
         Me.city.Name = "city"
         Me.city.Size = New System.Drawing.Size(31, 17)
         Me.city.TabIndex = 9
@@ -133,21 +136,21 @@ Partial Class NewStaffForm
         '
         'fNameTextBox
         '
-        Me.fNameTextBox.Location = New System.Drawing.Point(226, 52)
+        Me.fNameTextBox.Location = New System.Drawing.Point(137, 82)
         Me.fNameTextBox.Name = "fNameTextBox"
         Me.fNameTextBox.Size = New System.Drawing.Size(100, 22)
         Me.fNameTextBox.TabIndex = 10
         '
         'lNameTextBox
         '
-        Me.lNameTextBox.Location = New System.Drawing.Point(226, 80)
+        Me.lNameTextBox.Location = New System.Drawing.Point(137, 110)
         Me.lNameTextBox.Name = "lNameTextBox"
         Me.lNameTextBox.Size = New System.Drawing.Size(100, 22)
         Me.lNameTextBox.TabIndex = 11
         '
         'cityTextBox
         '
-        Me.cityTextBox.Location = New System.Drawing.Point(226, 108)
+        Me.cityTextBox.Location = New System.Drawing.Point(137, 140)
         Me.cityTextBox.MaxLength = 25
         Me.cityTextBox.Name = "cityTextBox"
         Me.cityTextBox.Size = New System.Drawing.Size(100, 22)
@@ -155,38 +158,68 @@ Partial Class NewStaffForm
         '
         'employeeIDTextBox
         '
-        Me.employeeIDTextBox.Location = New System.Drawing.Point(226, 136)
+        Me.employeeIDTextBox.Location = New System.Drawing.Point(137, 54)
         Me.employeeIDTextBox.Name = "employeeIDTextBox"
         Me.employeeIDTextBox.Size = New System.Drawing.Size(100, 22)
         Me.employeeIDTextBox.TabIndex = 13
         '
         'custIDTextBox
         '
-        Me.custIDTextBox.Location = New System.Drawing.Point(226, 164)
+        Me.custIDTextBox.Location = New System.Drawing.Point(137, 168)
         Me.custIDTextBox.Name = "custIDTextBox"
         Me.custIDTextBox.Size = New System.Drawing.Size(100, 22)
         Me.custIDTextBox.TabIndex = 14
         '
         'rewardsIDTextBox
         '
-        Me.rewardsIDTextBox.Location = New System.Drawing.Point(226, 192)
+        Me.rewardsIDTextBox.Location = New System.Drawing.Point(137, 196)
         Me.rewardsIDTextBox.Name = "rewardsIDTextBox"
         Me.rewardsIDTextBox.Size = New System.Drawing.Size(100, 22)
         Me.rewardsIDTextBox.TabIndex = 15
         '
         'passwordTextBox
         '
-        Me.passwordTextBox.Location = New System.Drawing.Point(226, 220)
+        Me.passwordTextBox.Location = New System.Drawing.Point(137, 224)
         Me.passwordTextBox.MaxLength = 255
         Me.passwordTextBox.Name = "passwordTextBox"
         Me.passwordTextBox.Size = New System.Drawing.Size(100, 22)
         Me.passwordTextBox.TabIndex = 16
         '
+        'getButton
+        '
+        Me.getButton.Location = New System.Drawing.Point(243, 54)
+        Me.getButton.Name = "getButton"
+        Me.getButton.Size = New System.Drawing.Size(88, 23)
+        Me.getButton.TabIndex = 17
+        Me.getButton.Text = "Get Staff"
+        Me.getButton.UseVisualStyleBackColor = True
+        '
+        'updateButton
+        '
+        Me.updateButton.Location = New System.Drawing.Point(112, 258)
+        Me.updateButton.Name = "updateButton"
+        Me.updateButton.Size = New System.Drawing.Size(75, 23)
+        Me.updateButton.TabIndex = 18
+        Me.updateButton.Text = "Update"
+        Me.updateButton.UseVisualStyleBackColor = True
+        '
+        'deleteButton
+        '
+        Me.deleteButton.Location = New System.Drawing.Point(31, 287)
+        Me.deleteButton.Name = "deleteButton"
+        Me.deleteButton.Size = New System.Drawing.Size(75, 23)
+        Me.deleteButton.TabIndex = 19
+        Me.deleteButton.Text = "Delete"
+        Me.deleteButton.UseVisualStyleBackColor = True
+        '
         'NewStaffForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(454, 307)
+        Me.ClientSize = New System.Drawing.Size(355, 331)
+        Me.Controls.Add(Me.deleteButton)
+        Me.Controls.Add(Me.updateButton)
+        Me.Controls.Add(Me.getButton)
         Me.Controls.Add(Me.passwordTextBox)
         Me.Controls.Add(Me.rewardsIDTextBox)
         Me.Controls.Add(Me.custIDTextBox)
@@ -228,4 +261,7 @@ Partial Class NewStaffForm
     Friend WithEvents custIDTextBox As TextBox
     Friend WithEvents rewardsIDTextBox As TextBox
     Friend WithEvents passwordTextBox As TextBox
+    Friend WithEvents getButton As Button
+    Friend WithEvents updateButton As Button
+    Friend WithEvents deleteButton As Button
 End Class
