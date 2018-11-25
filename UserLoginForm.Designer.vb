@@ -35,9 +35,9 @@ Partial Class UserLoginForm
         '
         Me.submitButton.Location = New System.Drawing.Point(51, 101)
         Me.submitButton.Name = "submitButton"
-        Me.submitButton.Size = New System.Drawing.Size(75, 23)
+        Me.submitButton.Size = New System.Drawing.Size(75, 48)
         Me.submitButton.TabIndex = 0
-        Me.submitButton.Text = "Submit"
+        Me.submitButton.Text = "Login"
         Me.submitButton.UseVisualStyleBackColor = True
         '
         'newUserButton
@@ -83,9 +83,9 @@ Partial Class UserLoginForm
         '
         'closeButton
         '
-        Me.closeButton.Location = New System.Drawing.Point(155, 130)
+        Me.closeButton.Location = New System.Drawing.Point(152, 126)
         Me.closeButton.Name = "closeButton"
-        Me.closeButton.Size = New System.Drawing.Size(75, 23)
+        Me.closeButton.Size = New System.Drawing.Size(78, 23)
         Me.closeButton.TabIndex = 6
         Me.closeButton.Text = "Close"
         Me.closeButton.UseVisualStyleBackColor = True

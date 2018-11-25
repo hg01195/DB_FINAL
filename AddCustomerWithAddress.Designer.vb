@@ -59,7 +59,7 @@ Partial Class AddCustomerWithAddress
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(96, 61)
+        Me.Label2.Location = New System.Drawing.Point(-37, 31)
         Me.Label2.MinimumSize = New System.Drawing.Size(150, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(150, 17)
@@ -70,7 +70,7 @@ Partial Class AddCustomerWithAddress
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(96, 146)
+        Me.Label3.Location = New System.Drawing.Point(-37, 116)
         Me.Label3.MinimumSize = New System.Drawing.Size(150, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(150, 17)
@@ -81,7 +81,7 @@ Partial Class AddCustomerWithAddress
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(96, 89)
+        Me.Label4.Location = New System.Drawing.Point(-37, 59)
         Me.Label4.MinimumSize = New System.Drawing.Size(150, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(150, 17)
@@ -92,7 +92,7 @@ Partial Class AddCustomerWithAddress
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(96, 117)
+        Me.Label1.Location = New System.Drawing.Point(-37, 87)
         Me.Label1.MinimumSize = New System.Drawing.Size(150, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(150, 17)
@@ -103,7 +103,7 @@ Partial Class AddCustomerWithAddress
         'PhoneNumber
         '
         Me.PhoneNumber.AutoSize = True
-        Me.PhoneNumber.Location = New System.Drawing.Point(141, 361)
+        Me.PhoneNumber.Location = New System.Drawing.Point(8, 331)
         Me.PhoneNumber.MinimumSize = New System.Drawing.Size(100, 0)
         Me.PhoneNumber.Name = "PhoneNumber"
         Me.PhoneNumber.Size = New System.Drawing.Size(103, 17)
@@ -114,7 +114,7 @@ Partial Class AddCustomerWithAddress
         'ZipCode
         '
         Me.ZipCode.AutoSize = True
-        Me.ZipCode.Location = New System.Drawing.Point(144, 333)
+        Me.ZipCode.Location = New System.Drawing.Point(11, 303)
         Me.ZipCode.MinimumSize = New System.Drawing.Size(100, 0)
         Me.ZipCode.Name = "ZipCode"
         Me.ZipCode.Size = New System.Drawing.Size(100, 17)
@@ -125,7 +125,7 @@ Partial Class AddCustomerWithAddress
         'State
         '
         Me.State.AutoSize = True
-        Me.State.Location = New System.Drawing.Point(144, 304)
+        Me.State.Location = New System.Drawing.Point(11, 274)
         Me.State.MinimumSize = New System.Drawing.Size(100, 0)
         Me.State.Name = "State"
         Me.State.Size = New System.Drawing.Size(100, 17)
@@ -136,7 +136,7 @@ Partial Class AddCustomerWithAddress
         'City
         '
         Me.City.AutoSize = True
-        Me.City.Location = New System.Drawing.Point(144, 277)
+        Me.City.Location = New System.Drawing.Point(11, 247)
         Me.City.MinimumSize = New System.Drawing.Size(100, 0)
         Me.City.Name = "City"
         Me.City.Size = New System.Drawing.Size(100, 17)
@@ -147,7 +147,7 @@ Partial Class AddCustomerWithAddress
         'AddressTwo
         '
         Me.AddressTwo.AutoSize = True
-        Me.AddressTwo.Location = New System.Drawing.Point(146, 249)
+        Me.AddressTwo.Location = New System.Drawing.Point(13, 219)
         Me.AddressTwo.MinimumSize = New System.Drawing.Size(100, 0)
         Me.AddressTwo.Name = "AddressTwo"
         Me.AddressTwo.Size = New System.Drawing.Size(100, 17)
@@ -158,7 +158,7 @@ Partial Class AddCustomerWithAddress
         'AddressOne
         '
         Me.AddressOne.AutoSize = True
-        Me.AddressOne.Location = New System.Drawing.Point(146, 221)
+        Me.AddressOne.Location = New System.Drawing.Point(13, 191)
         Me.AddressOne.MinimumSize = New System.Drawing.Size(100, 0)
         Me.AddressOne.Name = "AddressOne"
         Me.AddressOne.Size = New System.Drawing.Size(100, 17)
@@ -168,7 +168,7 @@ Partial Class AddCustomerWithAddress
         '
         'AddCustomerButton
         '
-        Me.AddCustomerButton.Location = New System.Drawing.Point(190, 410)
+        Me.AddCustomerButton.Location = New System.Drawing.Point(36, 370)
         Me.AddCustomerButton.Name = "AddCustomerButton"
         Me.AddCustomerButton.Size = New System.Drawing.Size(122, 23)
         Me.AddCustomerButton.TabIndex = 23
@@ -177,7 +177,7 @@ Partial Class AddCustomerWithAddress
         '
         'CloseButton
         '
-        Me.CloseButton.Location = New System.Drawing.Point(350, 410)
+        Me.CloseButton.Location = New System.Drawing.Point(196, 370)
         Me.CloseButton.Name = "CloseButton"
         Me.CloseButton.Size = New System.Drawing.Size(75, 23)
         Me.CloseButton.TabIndex = 24
@@ -186,79 +186,79 @@ Partial Class AddCustomerWithAddress
         '
         'Password_TB
         '
-        Me.Password_TB.Location = New System.Drawing.Point(266, 114)
+        Me.Password_TB.Location = New System.Drawing.Point(133, 84)
         Me.Password_TB.Name = "Password_TB"
-        Me.Password_TB.Size = New System.Drawing.Size(100, 22)
+        Me.Password_TB.Size = New System.Drawing.Size(144, 22)
         Me.Password_TB.TabIndex = 26
         '
         'EmailAddress_TB
         '
-        Me.EmailAddress_TB.Location = New System.Drawing.Point(266, 143)
+        Me.EmailAddress_TB.Location = New System.Drawing.Point(133, 113)
         Me.EmailAddress_TB.Name = "EmailAddress_TB"
-        Me.EmailAddress_TB.Size = New System.Drawing.Size(100, 22)
+        Me.EmailAddress_TB.Size = New System.Drawing.Size(144, 22)
         Me.EmailAddress_TB.TabIndex = 27
         '
         'FirstName_TB
         '
-        Me.FirstName_TB.Location = New System.Drawing.Point(266, 58)
+        Me.FirstName_TB.Location = New System.Drawing.Point(133, 28)
         Me.FirstName_TB.Name = "FirstName_TB"
-        Me.FirstName_TB.Size = New System.Drawing.Size(100, 22)
+        Me.FirstName_TB.Size = New System.Drawing.Size(144, 22)
         Me.FirstName_TB.TabIndex = 28
         '
         'LastName_TB
         '
-        Me.LastName_TB.Location = New System.Drawing.Point(266, 86)
+        Me.LastName_TB.Location = New System.Drawing.Point(133, 56)
         Me.LastName_TB.Name = "LastName_TB"
-        Me.LastName_TB.Size = New System.Drawing.Size(100, 22)
+        Me.LastName_TB.Size = New System.Drawing.Size(144, 22)
         Me.LastName_TB.TabIndex = 29
         '
         'ShippingLine1_TB
         '
-        Me.ShippingLine1_TB.Location = New System.Drawing.Point(266, 218)
+        Me.ShippingLine1_TB.Location = New System.Drawing.Point(133, 188)
         Me.ShippingLine1_TB.Name = "ShippingLine1_TB"
-        Me.ShippingLine1_TB.Size = New System.Drawing.Size(100, 22)
+        Me.ShippingLine1_TB.Size = New System.Drawing.Size(144, 22)
         Me.ShippingLine1_TB.TabIndex = 33
         '
         'ShippingLine2_TB
         '
-        Me.ShippingLine2_TB.Location = New System.Drawing.Point(266, 246)
+        Me.ShippingLine2_TB.Location = New System.Drawing.Point(133, 216)
         Me.ShippingLine2_TB.Name = "ShippingLine2_TB"
-        Me.ShippingLine2_TB.Size = New System.Drawing.Size(100, 22)
+        Me.ShippingLine2_TB.Size = New System.Drawing.Size(144, 22)
         Me.ShippingLine2_TB.TabIndex = 34
         '
         'ShippingCity_TB
         '
-        Me.ShippingCity_TB.Location = New System.Drawing.Point(266, 274)
+        Me.ShippingCity_TB.Location = New System.Drawing.Point(133, 244)
         Me.ShippingCity_TB.Name = "ShippingCity_TB"
-        Me.ShippingCity_TB.Size = New System.Drawing.Size(100, 22)
+        Me.ShippingCity_TB.Size = New System.Drawing.Size(144, 22)
         Me.ShippingCity_TB.TabIndex = 35
         '
         'ShippingState_TB
         '
-        Me.ShippingState_TB.Location = New System.Drawing.Point(266, 302)
+        Me.ShippingState_TB.Location = New System.Drawing.Point(133, 272)
         Me.ShippingState_TB.Name = "ShippingState_TB"
-        Me.ShippingState_TB.Size = New System.Drawing.Size(100, 22)
+        Me.ShippingState_TB.Size = New System.Drawing.Size(144, 22)
         Me.ShippingState_TB.TabIndex = 36
         '
         'ShippingZip_TB
         '
-        Me.ShippingZip_TB.Location = New System.Drawing.Point(266, 330)
+        Me.ShippingZip_TB.Location = New System.Drawing.Point(133, 300)
         Me.ShippingZip_TB.Name = "ShippingZip_TB"
-        Me.ShippingZip_TB.Size = New System.Drawing.Size(100, 22)
+        Me.ShippingZip_TB.Size = New System.Drawing.Size(144, 22)
         Me.ShippingZip_TB.TabIndex = 37
         '
         'ShippingPhone_TB
         '
-        Me.ShippingPhone_TB.Location = New System.Drawing.Point(266, 358)
+        Me.ShippingPhone_TB.Location = New System.Drawing.Point(133, 328)
         Me.ShippingPhone_TB.Name = "ShippingPhone_TB"
-        Me.ShippingPhone_TB.Size = New System.Drawing.Size(100, 22)
+        Me.ShippingPhone_TB.Size = New System.Drawing.Size(144, 22)
         Me.ShippingPhone_TB.TabIndex = 38
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label6.Location = New System.Drawing.Point(198, 191)
+        Me.Label6.Location = New System.Drawing.Point(92, 161)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(140, 20)
         Me.Label6.TabIndex = 39
@@ -268,7 +268,7 @@ Partial Class AddCustomerWithAddress
         '
         Me.PersonalInformation.AutoSize = True
         Me.PersonalInformation.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.PersonalInformation.Location = New System.Drawing.Point(186, 30)
+        Me.PersonalInformation.Location = New System.Drawing.Point(79, 5)
         Me.PersonalInformation.Name = "PersonalInformation"
         Me.PersonalInformation.Size = New System.Drawing.Size(163, 20)
         Me.PersonalInformation.TabIndex = 40
@@ -277,7 +277,7 @@ Partial Class AddCustomerWithAddress
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(372, 220)
+        Me.CheckBox1.Location = New System.Drawing.Point(305, 190)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(125, 21)
         Me.CheckBox1.TabIndex = 41
@@ -286,49 +286,49 @@ Partial Class AddCustomerWithAddress
         '
         'BillingPhone_TB
         '
-        Me.BillingPhone_TB.Location = New System.Drawing.Point(504, 358)
+        Me.BillingPhone_TB.Location = New System.Drawing.Point(437, 328)
         Me.BillingPhone_TB.Name = "BillingPhone_TB"
-        Me.BillingPhone_TB.Size = New System.Drawing.Size(100, 22)
+        Me.BillingPhone_TB.Size = New System.Drawing.Size(144, 22)
         Me.BillingPhone_TB.TabIndex = 47
         Me.BillingPhone_TB.Visible = False
         '
         'BillingZip_TB
         '
-        Me.BillingZip_TB.Location = New System.Drawing.Point(504, 330)
+        Me.BillingZip_TB.Location = New System.Drawing.Point(437, 300)
         Me.BillingZip_TB.Name = "BillingZip_TB"
-        Me.BillingZip_TB.Size = New System.Drawing.Size(100, 22)
+        Me.BillingZip_TB.Size = New System.Drawing.Size(144, 22)
         Me.BillingZip_TB.TabIndex = 46
         Me.BillingZip_TB.Visible = False
         '
         'BillingState_TB
         '
-        Me.BillingState_TB.Location = New System.Drawing.Point(504, 302)
+        Me.BillingState_TB.Location = New System.Drawing.Point(437, 272)
         Me.BillingState_TB.Name = "BillingState_TB"
-        Me.BillingState_TB.Size = New System.Drawing.Size(100, 22)
+        Me.BillingState_TB.Size = New System.Drawing.Size(144, 22)
         Me.BillingState_TB.TabIndex = 45
         Me.BillingState_TB.Visible = False
         '
         'BillingCity_TB
         '
-        Me.BillingCity_TB.Location = New System.Drawing.Point(504, 272)
+        Me.BillingCity_TB.Location = New System.Drawing.Point(437, 242)
         Me.BillingCity_TB.Name = "BillingCity_TB"
-        Me.BillingCity_TB.Size = New System.Drawing.Size(100, 22)
+        Me.BillingCity_TB.Size = New System.Drawing.Size(144, 22)
         Me.BillingCity_TB.TabIndex = 44
         Me.BillingCity_TB.Visible = False
         '
         'BillingLine2_TB
         '
-        Me.BillingLine2_TB.Location = New System.Drawing.Point(504, 245)
+        Me.BillingLine2_TB.Location = New System.Drawing.Point(437, 215)
         Me.BillingLine2_TB.Name = "BillingLine2_TB"
-        Me.BillingLine2_TB.Size = New System.Drawing.Size(100, 22)
+        Me.BillingLine2_TB.Size = New System.Drawing.Size(144, 22)
         Me.BillingLine2_TB.TabIndex = 43
         Me.BillingLine2_TB.Visible = False
         '
         'BillingLine1_TB
         '
-        Me.BillingLine1_TB.Location = New System.Drawing.Point(504, 218)
+        Me.BillingLine1_TB.Location = New System.Drawing.Point(437, 188)
         Me.BillingLine1_TB.Name = "BillingLine1_TB"
-        Me.BillingLine1_TB.Size = New System.Drawing.Size(100, 22)
+        Me.BillingLine1_TB.Size = New System.Drawing.Size(144, 22)
         Me.BillingLine1_TB.TabIndex = 42
         Me.BillingLine1_TB.Visible = False
         '
@@ -336,7 +336,7 @@ Partial Class AddCustomerWithAddress
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label5.Location = New System.Drawing.Point(500, 191)
+        Me.Label5.Location = New System.Drawing.Point(448, 161)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(122, 20)
         Me.Label5.TabIndex = 48
@@ -347,7 +347,7 @@ Partial Class AddCustomerWithAddress
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(595, 408)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.BillingPhone_TB)
         Me.Controls.Add(Me.BillingZip_TB)
@@ -380,7 +380,7 @@ Partial Class AddCustomerWithAddress
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.MinimumSize = New System.Drawing.Size(100, 20)
+        Me.MinimumSize = New System.Drawing.Size(100, 47)
         Me.Name = "AddCustomerWithAddress"
         Me.Text = "Form1"
         Me.ResumeLayout(False)

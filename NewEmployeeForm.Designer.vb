@@ -30,7 +30,7 @@ Partial Class NewEmployeeForm
         '
         'newStaffButton
         '
-        Me.newStaffButton.Location = New System.Drawing.Point(78, 88)
+        Me.newStaffButton.Location = New System.Drawing.Point(32, 27)
         Me.newStaffButton.Name = "newStaffButton"
         Me.newStaffButton.Size = New System.Drawing.Size(99, 23)
         Me.newStaffButton.TabIndex = 0
@@ -39,7 +39,7 @@ Partial Class NewEmployeeForm
         '
         'newAdminButton
         '
-        Me.newAdminButton.Location = New System.Drawing.Point(218, 88)
+        Me.newAdminButton.Location = New System.Drawing.Point(164, 27)
         Me.newAdminButton.Name = "newAdminButton"
         Me.newAdminButton.Size = New System.Drawing.Size(99, 23)
         Me.newAdminButton.TabIndex = 1
@@ -48,7 +48,7 @@ Partial Class NewEmployeeForm
         '
         'backButton
         '
-        Me.backButton.Location = New System.Drawing.Point(324, 191)
+        Me.backButton.Location = New System.Drawing.Point(175, 77)
         Me.backButton.Name = "backButton"
         Me.backButton.Size = New System.Drawing.Size(75, 23)
         Me.backButton.TabIndex = 2
@@ -57,7 +57,7 @@ Partial Class NewEmployeeForm
         '
         'logOutButton
         '
-        Me.logOutButton.Location = New System.Drawing.Point(324, 12)
+        Me.logOutButton.Location = New System.Drawing.Point(43, 77)
         Me.logOutButton.Name = "logOutButton"
         Me.logOutButton.Size = New System.Drawing.Size(75, 23)
         Me.logOutButton.TabIndex = 3
@@ -68,7 +68,7 @@ Partial Class NewEmployeeForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(411, 226)
+        Me.ClientSize = New System.Drawing.Size(281, 122)
         Me.Controls.Add(Me.logOutButton)
         Me.Controls.Add(Me.backButton)
         Me.Controls.Add(Me.newAdminButton)

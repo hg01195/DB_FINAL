@@ -4,6 +4,8 @@ Imports System.Net.Mime.MediaTypeNames
 
 Public Class UpdateAddressForm
 
+    Dim flag = False
+
     'THIS NEEDS FORM BEFORE IT DONE BEFORE TESTING
     Dim connection As New SqlConnection(SQLcONN)
 
@@ -32,8 +34,8 @@ Public Class UpdateAddressForm
             BillingZip_TB.Text = table.Rows(1)(6).ToString()
             BillingPhone_TB.Text = table.Rows(1)(7).ToString()
         Catch ex As Exception
+            flag = True
         End Try
-
         connection.Close()
     End Sub
 
@@ -43,36 +45,42 @@ Public Class UpdateAddressForm
         Dim command2 As New SqlCommand("UPDATE Addresses SET Line1 = @line1, Line2 = @line2, City = @city, State = @state, ZipCode = @zip, Phone = @phone WHERE CustomerID = @cid AND AddressID = @aid", connection)
         command2.Parameters.Add(New SqlParameter("@cid", SqlDbType.Int)).Value = custID
         command2.Parameters.Add(New SqlParameter("@aid", SqlDbType.Int)).Value = addressID
-        'addressID += 1
-        Console.WriteLine(addressID)
-
         command2.Parameters.Add("@line1", SqlDbType.VarChar).Value = ShippingLine1_TB.Text
         command2.Parameters.Add("@line2", SqlDbType.VarChar).Value = ShippingLine2_TB.Text
         command2.Parameters.Add("@city", SqlDbType.VarChar).Value = ShippingCity_TB.Text
         command2.Parameters.Add("@state", SqlDbType.VarChar).Value = ShippingState_TB.Text.ToUpper
         command2.Parameters.Add("@zip", SqlDbType.Int).Value = ShippingZip_TB.Text
         command2.Parameters.Add("@phone", SqlDbType.VarChar).Value = ShippingPhone_TB.Text
-
         command2.ExecuteNonQuery()
 
-        Dim command3 As New SqlCommand("UPDATE Addresses SET Line1 = @Bline1, Line2 = @Bline2, City = @Bcity, State = @Bstate, ZipCode = @Bzip, Phone = @Bphone WHERE CustomerID = @Bcid AND AddressID = @aid + 1", connection)
-        command3.Parameters.Add(New SqlParameter("@Bcid", SqlDbType.Int)).Value = custID
-        command3.Parameters.Add(New SqlParameter("@aid", SqlDbType.Int)).Value = addressID
-        Console.WriteLine(addressID)
+        If (flag = True) Then
+            Dim command4 As New SqlCommand("insert into Addresses(AddressID, CustomerID, Line1, Line2, City, State, ZipCode, Phone) values(@aid,@cid,@line1,@line2,@city,@state,@zip,@phone)", connection)
+            command4.Parameters.Add(New SqlParameter("@aid", SqlDbType.Int)).Value = addressID + 1
+            command4.Parameters.Add(New SqlParameter("@cid", SqlDbType.Int)).Value = custID
+            command4.Parameters.Add("@line1", SqlDbType.VarChar).Value = BillingLine1_TB.Text
+            command4.Parameters.Add("@line2", SqlDbType.VarChar).Value = BillingLine2_TB.Text
+            command4.Parameters.Add("@city", SqlDbType.VarChar).Value = BillingCity_TB.Text
+            command4.Parameters.Add("@state", SqlDbType.VarChar).Value = BillingState_TB.Text.ToUpper
+            command4.Parameters.Add("@zip", SqlDbType.Int).Value = BillingZip_TB.Text
+            command4.Parameters.Add("@phone", SqlDbType.VarChar).Value = BillingPhone_TB.Text
+            command4.ExecuteNonQuery()
+        Else
+            Dim command3 As New SqlCommand("UPDATE Addresses SET Line1 = @Bline1, Line2 = @Bline2, City = @Bcity, State = @Bstate, ZipCode = @Bzip, Phone = @Bphone WHERE CustomerID = @Bcid AND AddressID = @aid + 1", connection)
+            command3.Parameters.Add(New SqlParameter("@Bcid", SqlDbType.Int)).Value = custID
+            command3.Parameters.Add(New SqlParameter("@aid", SqlDbType.Int)).Value = addressID
+            command3.Parameters.Add("@Bline1", SqlDbType.VarChar).Value = BillingLine1_TB.Text
+            command3.Parameters.Add("@Bline2", SqlDbType.VarChar).Value = BillingLine2_TB.Text
+            command3.Parameters.Add("@Bcity", SqlDbType.VarChar).Value = BillingCity_TB.Text
+            command3.Parameters.Add("@Bstate", SqlDbType.VarChar).Value = BillingState_TB.Text.ToUpper
+            command3.Parameters.Add("@Bzip", SqlDbType.Int).Value = BillingZip_TB.Text
+            command3.Parameters.Add("@Bphone", SqlDbType.VarChar).Value = BillingPhone_TB.Text
+            command3.ExecuteNonQuery()
+        End If
 
-        command3.Parameters.Add("@Bline1", SqlDbType.VarChar).Value = BillingLine1_TB.Text
-        command3.Parameters.Add("@Bline2", SqlDbType.VarChar).Value = BillingLine2_TB.Text
-        command3.Parameters.Add("@Bcity", SqlDbType.VarChar).Value = BillingCity_TB.Text
-        command3.Parameters.Add("@Bstate", SqlDbType.VarChar).Value = BillingState_TB.Text.ToUpper
-        command3.Parameters.Add("@Bzip", SqlDbType.Int).Value = BillingZip_TB.Text
-        command3.Parameters.Add("@Bphone", SqlDbType.VarChar).Value = BillingPhone_TB.Text
-
-        command3.ExecuteNonQuery()
+        connection.Close()
 
         OrderItemsForm.Show()
         Me.Close()
-
-        connection.Close()
 
     End Sub
 

@@ -26,6 +26,7 @@ Partial Class HelloCustomerForm
         Me.ServicesButton = New System.Windows.Forms.Button()
         Me.RewardsProgramButton = New System.Windows.Forms.Button()
         Me.AccountInformationButton = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ProductsButton
@@ -68,11 +69,21 @@ Partial Class HelloCustomerForm
         Me.AccountInformationButton.Text = "Account Information"
         Me.AccountInformationButton.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(240, 287)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(84, 36)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "Logout"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'HelloCustomerForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(559, 276)
+        Me.ClientSize = New System.Drawing.Size(559, 335)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.AccountInformationButton)
         Me.Controls.Add(Me.RewardsProgramButton)
         Me.Controls.Add(Me.ServicesButton)
@@ -87,4 +98,5 @@ Partial Class HelloCustomerForm
     Friend WithEvents ServicesButton As Button
     Friend WithEvents RewardsProgramButton As Button
     Friend WithEvents AccountInformationButton As Button
+    Friend WithEvents Button1 As Button
 End Class

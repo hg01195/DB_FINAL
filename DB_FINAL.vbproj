@@ -115,12 +115,6 @@
     <Compile Include="NewCustForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewEmpForm.Designer.vb">
-      <DependentUpon>NewEmpForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="NewEmpForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="NewEmployeeForm.Designer.vb">
       <DependentUpon>NewEmployeeForm.vb</DependentUpon>
     </Compile>
@@ -131,12 +125,6 @@
       <DependentUpon>NewStaffForm.vb</DependentUpon>
     </Compile>
     <Compile Include="NewStaffForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NewUserForm.Designer.vb">
-      <DependentUpon>NewUserForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="NewUserForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OrderItemsForm.Designer.vb">
@@ -217,17 +205,11 @@
     <EmbeddedResource Include="NewCustForm.resx">
       <DependentUpon>NewCustForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewEmpForm.resx">
-      <DependentUpon>NewEmpForm.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NewEmployeeForm.resx">
       <DependentUpon>NewEmployeeForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewStaffForm.resx">
       <DependentUpon>NewStaffForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NewUserForm.resx">
-      <DependentUpon>NewUserForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderItemsForm.resx">
       <DependentUpon>OrderItemsForm.vb</DependentUpon>

@@ -56,7 +56,7 @@ Partial Class UpdateAddressForm
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label5.Location = New System.Drawing.Point(79, 271)
+        Me.Label5.Location = New System.Drawing.Point(79, 220)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(122, 20)
         Me.Label5.TabIndex = 69
@@ -65,44 +65,44 @@ Partial Class UpdateAddressForm
         '
         'BillingPhone_TB
         '
-        Me.BillingPhone_TB.Location = New System.Drawing.Point(137, 444)
+        Me.BillingPhone_TB.Location = New System.Drawing.Point(137, 393)
         Me.BillingPhone_TB.Name = "BillingPhone_TB"
-        Me.BillingPhone_TB.Size = New System.Drawing.Size(100, 22)
+        Me.BillingPhone_TB.Size = New System.Drawing.Size(170, 22)
         Me.BillingPhone_TB.TabIndex = 68
         '
         'BillingZip_TB
         '
-        Me.BillingZip_TB.Location = New System.Drawing.Point(137, 416)
+        Me.BillingZip_TB.Location = New System.Drawing.Point(137, 365)
         Me.BillingZip_TB.Name = "BillingZip_TB"
-        Me.BillingZip_TB.Size = New System.Drawing.Size(100, 22)
+        Me.BillingZip_TB.Size = New System.Drawing.Size(170, 22)
         Me.BillingZip_TB.TabIndex = 67
         '
         'BillingState_TB
         '
-        Me.BillingState_TB.Location = New System.Drawing.Point(137, 388)
+        Me.BillingState_TB.Location = New System.Drawing.Point(137, 337)
         Me.BillingState_TB.Name = "BillingState_TB"
-        Me.BillingState_TB.Size = New System.Drawing.Size(100, 22)
+        Me.BillingState_TB.Size = New System.Drawing.Size(170, 22)
         Me.BillingState_TB.TabIndex = 66
         '
         'BillingCity_TB
         '
-        Me.BillingCity_TB.Location = New System.Drawing.Point(137, 358)
+        Me.BillingCity_TB.Location = New System.Drawing.Point(137, 307)
         Me.BillingCity_TB.Name = "BillingCity_TB"
-        Me.BillingCity_TB.Size = New System.Drawing.Size(100, 22)
+        Me.BillingCity_TB.Size = New System.Drawing.Size(170, 22)
         Me.BillingCity_TB.TabIndex = 65
         '
         'BillingLine2_TB
         '
-        Me.BillingLine2_TB.Location = New System.Drawing.Point(137, 331)
+        Me.BillingLine2_TB.Location = New System.Drawing.Point(137, 280)
         Me.BillingLine2_TB.Name = "BillingLine2_TB"
-        Me.BillingLine2_TB.Size = New System.Drawing.Size(100, 22)
+        Me.BillingLine2_TB.Size = New System.Drawing.Size(170, 22)
         Me.BillingLine2_TB.TabIndex = 64
         '
         'BillingLine1_TB
         '
-        Me.BillingLine1_TB.Location = New System.Drawing.Point(137, 304)
+        Me.BillingLine1_TB.Location = New System.Drawing.Point(137, 253)
         Me.BillingLine1_TB.Name = "BillingLine1_TB"
-        Me.BillingLine1_TB.Size = New System.Drawing.Size(100, 22)
+        Me.BillingLine1_TB.Size = New System.Drawing.Size(170, 22)
         Me.BillingLine1_TB.TabIndex = 63
         '
         'Label6
@@ -119,42 +119,42 @@ Partial Class UpdateAddressForm
         '
         Me.ShippingPhone_TB.Location = New System.Drawing.Point(137, 176)
         Me.ShippingPhone_TB.Name = "ShippingPhone_TB"
-        Me.ShippingPhone_TB.Size = New System.Drawing.Size(100, 22)
+        Me.ShippingPhone_TB.Size = New System.Drawing.Size(170, 22)
         Me.ShippingPhone_TB.TabIndex = 60
         '
         'ShippingZip_TB
         '
         Me.ShippingZip_TB.Location = New System.Drawing.Point(137, 148)
         Me.ShippingZip_TB.Name = "ShippingZip_TB"
-        Me.ShippingZip_TB.Size = New System.Drawing.Size(100, 22)
+        Me.ShippingZip_TB.Size = New System.Drawing.Size(170, 22)
         Me.ShippingZip_TB.TabIndex = 59
         '
         'ShippingState_TB
         '
         Me.ShippingState_TB.Location = New System.Drawing.Point(137, 120)
         Me.ShippingState_TB.Name = "ShippingState_TB"
-        Me.ShippingState_TB.Size = New System.Drawing.Size(100, 22)
+        Me.ShippingState_TB.Size = New System.Drawing.Size(170, 22)
         Me.ShippingState_TB.TabIndex = 58
         '
         'ShippingCity_TB
         '
         Me.ShippingCity_TB.Location = New System.Drawing.Point(137, 92)
         Me.ShippingCity_TB.Name = "ShippingCity_TB"
-        Me.ShippingCity_TB.Size = New System.Drawing.Size(100, 22)
+        Me.ShippingCity_TB.Size = New System.Drawing.Size(170, 22)
         Me.ShippingCity_TB.TabIndex = 57
         '
         'ShippingLine2_TB
         '
         Me.ShippingLine2_TB.Location = New System.Drawing.Point(137, 64)
         Me.ShippingLine2_TB.Name = "ShippingLine2_TB"
-        Me.ShippingLine2_TB.Size = New System.Drawing.Size(100, 22)
+        Me.ShippingLine2_TB.Size = New System.Drawing.Size(170, 22)
         Me.ShippingLine2_TB.TabIndex = 56
         '
         'ShippingLine1_TB
         '
         Me.ShippingLine1_TB.Location = New System.Drawing.Point(137, 36)
         Me.ShippingLine1_TB.Name = "ShippingLine1_TB"
-        Me.ShippingLine1_TB.Size = New System.Drawing.Size(100, 22)
+        Me.ShippingLine1_TB.Size = New System.Drawing.Size(170, 22)
         Me.ShippingLine1_TB.TabIndex = 55
         '
         'PhoneNumber
@@ -231,7 +231,7 @@ Partial Class UpdateAddressForm
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(-5, 446)
+        Me.Label1.Location = New System.Drawing.Point(-5, 395)
         Me.Label1.MaximumSize = New System.Drawing.Size(120, 0)
         Me.Label1.MinimumSize = New System.Drawing.Size(120, 18)
         Me.Label1.Name = "Label1"
@@ -243,7 +243,7 @@ Partial Class UpdateAddressForm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(15, 419)
+        Me.Label2.Location = New System.Drawing.Point(15, 368)
         Me.Label2.MaximumSize = New System.Drawing.Size(100, 0)
         Me.Label2.MinimumSize = New System.Drawing.Size(100, 0)
         Me.Label2.Name = "Label2"
@@ -254,7 +254,7 @@ Partial Class UpdateAddressForm
         '
         'Label3
         '
-        Me.Label3.Location = New System.Drawing.Point(15, 392)
+        Me.Label3.Location = New System.Drawing.Point(15, 341)
         Me.Label3.MaximumSize = New System.Drawing.Size(100, 0)
         Me.Label3.MinimumSize = New System.Drawing.Size(100, 15)
         Me.Label3.Name = "Label3"
@@ -266,7 +266,7 @@ Partial Class UpdateAddressForm
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(15, 361)
+        Me.Label4.Location = New System.Drawing.Point(15, 310)
         Me.Label4.MaximumSize = New System.Drawing.Size(100, 0)
         Me.Label4.MinimumSize = New System.Drawing.Size(100, 0)
         Me.Label4.Name = "Label4"
@@ -278,7 +278,7 @@ Partial Class UpdateAddressForm
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(15, 334)
+        Me.Label7.Location = New System.Drawing.Point(15, 283)
         Me.Label7.MaximumSize = New System.Drawing.Size(100, 0)
         Me.Label7.MinimumSize = New System.Drawing.Size(100, 0)
         Me.Label7.Name = "Label7"
@@ -290,7 +290,7 @@ Partial Class UpdateAddressForm
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(15, 309)
+        Me.Label8.Location = New System.Drawing.Point(15, 258)
         Me.Label8.MaximumSize = New System.Drawing.Size(100, 0)
         Me.Label8.MinimumSize = New System.Drawing.Size(100, 0)
         Me.Label8.Name = "Label8"
@@ -302,7 +302,7 @@ Partial Class UpdateAddressForm
         'UpdateButton
         '
         Me.UpdateButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UpdateButton.Location = New System.Drawing.Point(20, 496)
+        Me.UpdateButton.Location = New System.Drawing.Point(62, 445)
         Me.UpdateButton.Name = "UpdateButton"
         Me.UpdateButton.Size = New System.Drawing.Size(95, 34)
         Me.UpdateButton.TabIndex = 76
@@ -312,7 +312,7 @@ Partial Class UpdateAddressForm
         'CloseButton
         '
         Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CloseButton.Location = New System.Drawing.Point(137, 496)
+        Me.CloseButton.Location = New System.Drawing.Point(179, 445)
         Me.CloseButton.Name = "CloseButton"
         Me.CloseButton.Size = New System.Drawing.Size(100, 34)
         Me.CloseButton.TabIndex = 77
@@ -323,7 +323,7 @@ Partial Class UpdateAddressForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(272, 537)
+        Me.ClientSize = New System.Drawing.Size(325, 493)
         Me.Controls.Add(Me.CloseButton)
         Me.Controls.Add(Me.UpdateButton)
         Me.Controls.Add(Me.Label1)
