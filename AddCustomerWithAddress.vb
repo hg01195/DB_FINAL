@@ -67,6 +67,7 @@ Public Class AddCustomerWithAddress
             command3.ExecuteNonQuery()
         End If
         HelloCustomerForm.Show()
+        Me.Close()
         connection.Close()
     End Sub
 
