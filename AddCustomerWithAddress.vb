@@ -48,7 +48,6 @@ Public Class AddCustomerWithAddress
 
             findSID = findNextShippingID.ExecuteScalar
             findBID = findNextBillingIDPlusOne.ExecuteScalar
-            Console.writeLine(findBID)
             findAID = findAddressID.ExecuteScalar
 
             command4.Parameters.Add("@cid", SqlDbType.Int).Value = findCID
