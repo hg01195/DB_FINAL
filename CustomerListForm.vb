@@ -8,10 +8,10 @@ Public Class CustomerListForm
 
     Private Sub CustomerListForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim connection As New SqlConnection(SQLcONN)
-        Dim id, rew, email, firstname, lastname
+        Dim id, rew, email, pass, firstname, lastname
         connection.Open()
         Using getCustomers As New SqlCommand("SELECT c.CustomerID,r.Type AS 'Rewards', 
-        EmailAddress, FirstName, LastName FROM CUSTOMERS AS c LEFT JOIN REWARDS_MEMBER AS r
+        EmailAddress, Password, FirstName, LastName FROM CUSTOMERS AS c LEFT JOIN REWARDS_MEMBER AS r
         ON c.CustomerID = r.CustomerID;", connection)
 
             Dim readCustomers As SqlDataReader
@@ -21,9 +21,10 @@ Public Class CustomerListForm
                 id = readCustomers("CustomerID").ToString()
                 rew = readCustomers("Rewards").ToString()
                 email = readCustomers("EmailAddress").ToString()
+                pass = readCustomers("Password").ToString()
                 firstname = readCustomers("FirstName").ToString()
                 lastname = readCustomers("LastName").ToString()
-                DataGridView1.Rows.Add(New String() {id, rew, email, firstname, lastname})
+                DataGridView1.Rows.Add(New String() {id, rew, email, pass, firstname, lastname})
             End While
 
         End Using

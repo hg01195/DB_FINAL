@@ -28,6 +28,7 @@ Partial Class CustomerListForm
         Me.CustomerID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Rewards = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.email = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pass = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fname = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lastname = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -35,7 +36,7 @@ Partial Class CustomerListForm
         '
         'back
         '
-        Me.back.Location = New System.Drawing.Point(693, 386)
+        Me.back.Location = New System.Drawing.Point(748, 416)
         Me.back.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.back.Name = "back"
         Me.back.Size = New System.Drawing.Size(75, 23)
@@ -45,7 +46,7 @@ Partial Class CustomerListForm
         '
         'logout
         '
-        Me.logout.Location = New System.Drawing.Point(693, 42)
+        Me.logout.Location = New System.Drawing.Point(731, 8)
         Me.logout.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.logout.Name = "logout"
         Me.logout.Size = New System.Drawing.Size(92, 28)
@@ -56,11 +57,11 @@ Partial Class CustomerListForm
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CustomerID, Me.Rewards, Me.email, Me.fname, Me.lastname})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CustomerID, Me.Rewards, Me.email, Me.pass, Me.fname, Me.lastname})
         Me.DataGridView1.Location = New System.Drawing.Point(16, 42)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(655, 368)
+        Me.DataGridView1.Size = New System.Drawing.Size(807, 368)
         Me.DataGridView1.TabIndex = 3
         '
         'CustomerID
@@ -94,6 +95,12 @@ Partial Class CustomerListForm
         Me.email.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.email.Width = 71
         '
+        'pass
+        '
+        Me.pass.Frozen = True
+        Me.pass.HeaderText = "Password"
+        Me.pass.Name = "pass"
+        '
         'fname
         '
         Me.fname.Frozen = True
@@ -114,7 +121,7 @@ Partial Class CustomerListForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(836, 450)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.logout)
         Me.Controls.Add(Me.back)
@@ -132,6 +139,7 @@ Partial Class CustomerListForm
     Friend WithEvents CustomerID As DataGridViewTextBoxColumn
     Friend WithEvents Rewards As DataGridViewTextBoxColumn
     Friend WithEvents email As DataGridViewTextBoxColumn
+    Friend WithEvents pass As DataGridViewTextBoxColumn
     Friend WithEvents fname As DataGridViewTextBoxColumn
     Friend WithEvents lastname As DataGridViewTextBoxColumn
 End Class
