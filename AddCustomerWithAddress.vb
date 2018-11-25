@@ -5,6 +5,7 @@ Imports System.Net.Mime.MediaTypeNames
 Public Class AddCustomerWithAddress
     Dim connection As New SqlConnection(SQLcONN)
 
+    Dim boxShown = False
     'ADD CUSTOMER
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles AddCustomerButton.Click
         Dim command As New SqlCommand("SET IDENTITY_INSERT Customers on;insert into Customers(CustomerID, FirstName, LastName, Password, EmailAddress, ShippingAddressID, BillingAddressID) values(@customerid,@firstname,@lastname,@password,@email,@sid,@bid)", connection)
@@ -37,17 +38,27 @@ Public Class AddCustomerWithAddress
         command2.Parameters.Add("@city", SqlDbType.VarChar).Value = ShippingCity_TB.Text
         command2.Parameters.Add("@state", SqlDbType.VarChar).Value = ShippingState_TB.Text.ToUpper
         command2.Parameters.Add("@zip", SqlDbType.Int).Value = ShippingZip_TB.Text
+
         command2.Parameters.Add("@phone", SqlDbType.VarChar).Value = ShippingPhone_TB.Text
 
         command.ExecuteNonQuery()
-        command2.ExecuteNonQuery()
+
+
+        Try
+            command2.ExecuteNonQuery()
+            boxShown = False
+
+        Catch ex As FormatException
+            MessageBox.Show("Invalid Zip Code. Only integers are allowed at 10 length.")
+            boxShown = True
+        End Try
         If (CheckBox1.Checked) Then
             Dim command3 As New SqlCommand("insert into Addresses(AddressID, CustomerID, Line1, Line2, City, State, ZipCode, Phone) values(@aid,@cid,@line1,@line2,@city,@state,@zip,@phone)", connection)
             Dim command4 As New SqlCommand("UPDATE CUSTOMERS SET BillingAddressID = @billing WHERE CustomerID = @cid", connection)
             Dim findNextBillingIDPLusOne As New SqlCommand("SELECT TOP 1 BillingAddressID + 1 FROM Customers ORDER BY BillingAddressID DESC", connection)
 
             findSID = findNextShippingID.ExecuteScalar
-            findBID = findNextBillingIDPlusOne.ExecuteScalar
+            findBID = findNextBillingIDPLusOne.ExecuteScalar
             findAID = findAddressID.ExecuteScalar
 
             command4.Parameters.Add("@cid", SqlDbType.Int).Value = findCID
@@ -56,17 +67,24 @@ Public Class AddCustomerWithAddress
             command3.Parameters.Add("@aid", SqlDbType.Int).Value = findAID
             command3.Parameters.Add("@cid", SqlDbType.Int).Value = findCID
             command3.Parameters.Add("@line1", SqlDbType.VarChar).Value = BillingLine1_TB.Text
-            command3.Parameters.Add("@line2", SqlDbType.VarChar).Value = BillingLine2_Tb.Text
+            command3.Parameters.Add("@line2", SqlDbType.VarChar).Value = BillingLine2_TB.Text
             command3.Parameters.Add("@city", SqlDbType.VarChar).Value = BillingCity_TB.Text
             command3.Parameters.Add("@state", SqlDbType.VarChar).Value = BillingState_TB.Text.ToUpper
             command3.Parameters.Add("@zip", SqlDbType.Int).Value = BillingZip_TB.Text
             command3.Parameters.Add("@phone", SqlDbType.VarChar).Value = BillingPhone_TB.Text
 
             command4.ExecuteNonQuery()
-            command3.ExecuteNonQuery()
+            Try
+                command3.ExecuteNonQuery()
+                boxShown = False
+            Catch ex As FormatException
+                MessageBox.Show("Invalid Zip Code. Only integers are allowed at 10 length.")
+                boxShown = True
+            End Try
         End If
         HelloCustomerForm.Show()
         Me.Close()
+
         connection.Close()
     End Sub
 

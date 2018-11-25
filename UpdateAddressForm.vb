@@ -5,6 +5,7 @@ Imports System.Net.Mime.MediaTypeNames
 Public Class UpdateAddressForm
 
     Dim flag = False
+    Dim boxShown = False
 
     'THIS NEEDS FORM BEFORE IT DONE BEFORE TESTING
     Dim connection As New SqlConnection(SQLcONN)
@@ -51,7 +52,15 @@ Public Class UpdateAddressForm
         command2.Parameters.Add("@state", SqlDbType.VarChar).Value = ShippingState_TB.Text.ToUpper
         command2.Parameters.Add("@zip", SqlDbType.Int).Value = ShippingZip_TB.Text
         command2.Parameters.Add("@phone", SqlDbType.VarChar).Value = ShippingPhone_TB.Text
-        command2.ExecuteNonQuery()
+
+        Try
+            command2.ExecuteNonQuery()
+            boxShown = False
+
+        Catch ex As FormatException
+            MessageBox.Show("Invalid Zip Code. Only integers are allowed at 10 length.")
+            boxShown = True
+        End Try
 
         If (flag = True) Then
             Dim command4 As New SqlCommand("insert into Addresses(AddressID, CustomerID, Line1, Line2, City, State, ZipCode, Phone) values(@aid,@cid,@line1,@line2,@city,@state,@zip,@phone)", connection)
@@ -63,7 +72,13 @@ Public Class UpdateAddressForm
             command4.Parameters.Add("@state", SqlDbType.VarChar).Value = BillingState_TB.Text.ToUpper
             command4.Parameters.Add("@zip", SqlDbType.Int).Value = BillingZip_TB.Text
             command4.Parameters.Add("@phone", SqlDbType.VarChar).Value = BillingPhone_TB.Text
-            command4.ExecuteNonQuery()
+            Try
+                command4.ExecuteNonQuery()
+                boxShown = False
+            Catch ex As FormatException
+                MessageBox.Show("Invalid Zip Code. Only integers are allowed at 10 length.")
+                boxShown = True
+            End Try
         Else
             Dim command3 As New SqlCommand("UPDATE Addresses SET Line1 = @Bline1, Line2 = @Bline2, City = @Bcity, State = @Bstate, ZipCode = @Bzip, Phone = @Bphone WHERE CustomerID = @Bcid AND AddressID = @aid + 1", connection)
             command3.Parameters.Add(New SqlParameter("@Bcid", SqlDbType.Int)).Value = custID
@@ -74,13 +89,25 @@ Public Class UpdateAddressForm
             command3.Parameters.Add("@Bstate", SqlDbType.VarChar).Value = BillingState_TB.Text.ToUpper
             command3.Parameters.Add("@Bzip", SqlDbType.Int).Value = BillingZip_TB.Text
             command3.Parameters.Add("@Bphone", SqlDbType.VarChar).Value = BillingPhone_TB.Text
-            command3.ExecuteNonQuery()
+            Try
+                command3.ExecuteNonQuery()
+                boxShown = False
+            Catch ex As FormatException
+                MessageBox.Show("Invalid Zip Code. Only integers are allowed at 10 length.")
+                boxShown = True
+            End Try
         End If
 
         connection.Close()
 
-        OrderItemsForm.Show()
-        Me.Close()
+        If (boxShown = True) Then
+
+        Else
+            OrderItemsForm.Show()
+            Me.Close()
+        End If
+
+
 
     End Sub
 
