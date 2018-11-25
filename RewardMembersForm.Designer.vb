@@ -31,13 +31,14 @@ Partial Class RewardMembersForm
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.AddToCart_Rewards = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Showcustomers
         '
         Me.Showcustomers.AccessibleName = "showcustomers"
         Me.Showcustomers.Location = New System.Drawing.Point(252, 385)
-        Me.Showcustomers.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Showcustomers.Margin = New System.Windows.Forms.Padding(4)
         Me.Showcustomers.Name = "Showcustomers"
         Me.Showcustomers.Size = New System.Drawing.Size(100, 28)
         Me.Showcustomers.TabIndex = 2
@@ -48,7 +49,7 @@ Partial Class RewardMembersForm
         '
         Me.gold.AutoSize = True
         Me.gold.Location = New System.Drawing.Point(8, 32)
-        Me.gold.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.gold.Margin = New System.Windows.Forms.Padding(4)
         Me.gold.Name = "gold"
         Me.gold.Size = New System.Drawing.Size(60, 21)
         Me.gold.TabIndex = 5
@@ -70,7 +71,7 @@ Partial Class RewardMembersForm
         '
         Me.platinum.AutoSize = True
         Me.platinum.Location = New System.Drawing.Point(8, 93)
-        Me.platinum.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.platinum.Margin = New System.Windows.Forms.Padding(4)
         Me.platinum.Name = "platinum"
         Me.platinum.Size = New System.Drawing.Size(84, 21)
         Me.platinum.TabIndex = 7
@@ -92,7 +93,7 @@ Partial Class RewardMembersForm
         '
         Me.Empoyee.AutoSize = True
         Me.Empoyee.Location = New System.Drawing.Point(8, 145)
-        Me.Empoyee.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Empoyee.Margin = New System.Windows.Forms.Padding(4)
         Me.Empoyee.Name = "Empoyee"
         Me.Empoyee.Size = New System.Drawing.Size(326, 21)
         Me.Empoyee.TabIndex = 9
@@ -125,18 +126,29 @@ Partial Class RewardMembersForm
         '
         Me.AddToCart_Rewards.DialogResult = System.Windows.Forms.DialogResult.Retry
         Me.AddToCart_Rewards.Location = New System.Drawing.Point(230, 193)
-        Me.AddToCart_Rewards.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.AddToCart_Rewards.Margin = New System.Windows.Forms.Padding(4)
         Me.AddToCart_Rewards.Name = "AddToCart_Rewards"
         Me.AddToCart_Rewards.Size = New System.Drawing.Size(135, 32)
         Me.AddToCart_Rewards.TabIndex = 12
         Me.AddToCart_Rewards.Text = "ADD TO CART"
         Me.AddToCart_Rewards.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Button1.Location = New System.Drawing.Point(253, 232)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(81, 37)
+        Me.Button1.TabIndex = 13
+        Me.Button1.Text = "Back"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'RewardMembersForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(571, 235)
+        Me.ClientSize = New System.Drawing.Size(571, 281)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.AddToCart_Rewards)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -146,7 +158,7 @@ Partial Class RewardMembersForm
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.gold)
         Me.Controls.Add(Me.Showcustomers)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "RewardMembersForm"
         Me.Text = "RewardMembersForm"
         Me.ResumeLayout(False)
@@ -162,4 +174,5 @@ Partial Class RewardMembersForm
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents AddToCart_Rewards As Button
+    Friend WithEvents Button1 As Button
 End Class

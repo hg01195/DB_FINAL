@@ -2,7 +2,7 @@
 
 Public Class CustomerListForm
     Private Sub back_Click(sender As Object, e As EventArgs) Handles back.Click
-        CustomerForm.Show()
+        AdminForm.Show()
         Me.Close()
     End Sub
 

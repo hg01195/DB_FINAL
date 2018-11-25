@@ -50,8 +50,8 @@ Public Class AddCustomerWithAddress
             findBID = findNextBillingIDPlusOne.ExecuteScalar
             Console.writeLine(findBID)
             findAID = findAddressID.ExecuteScalar
-    
-            command4.Parameters.Add("@cid", SqlDbType.Int).Value = findCID  
+
+            command4.Parameters.Add("@cid", SqlDbType.Int).Value = findCID
             command4.Parameters.Add("@billing", SqlDbType.Int).Value = findBID
 
             command3.Parameters.Add("@aid", SqlDbType.Int).Value = findAID
@@ -66,6 +66,7 @@ Public Class AddCustomerWithAddress
             command4.ExecuteNonQuery()
             command3.ExecuteNonQuery()
         End If
+        HelloCustomerForm.Show()
         connection.Close()
     End Sub
 

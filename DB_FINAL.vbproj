@@ -109,12 +109,6 @@
     <Compile Include="NewAdminForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewCustForm.Designer.vb">
-      <DependentUpon>NewCustForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="NewCustForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="NewEmployeeForm.Designer.vb">
       <DependentUpon>NewEmployeeForm.vb</DependentUpon>
     </Compile>
@@ -201,9 +195,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewAdminForm.resx">
       <DependentUpon>NewAdminForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NewCustForm.resx">
-      <DependentUpon>NewCustForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewEmployeeForm.resx">
       <DependentUpon>NewEmployeeForm.vb</DependentUpon>

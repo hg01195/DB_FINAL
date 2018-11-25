@@ -4,7 +4,8 @@ Public Class UserLoginForm
     Dim connection As New SqlConnection(SQLcONN)
 
     Private Sub NewUser_Click(sender As Object, e As EventArgs) Handles newUserButton.Click
-        NewUserForm.Show()
+        AddCustomerWithAddress.Show()
+        Me.Close()
     End Sub
 
     Private Sub close_Click(sender As Object, e As EventArgs) Handles closeButton.Click

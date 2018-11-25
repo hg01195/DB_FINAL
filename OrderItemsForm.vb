@@ -21,6 +21,7 @@ Public Class OrderItemsForm
         from ORDERS o join ORDER_ITEMS oi on o.OrderID = oi.orderid
         join SERVICES s on oi.ServiceID = s.ServiceID join ADDRESSES a on o.CustomerID = a.CustomerID
         where o.CustomerID = @CustomerID and o.ShipAddressID = a.AddressID", connection)
+        command2.Parameters.Add(New SqlParameter("@CustomerID", SqlDbType.Int)).Value = custID
         Dim adapter2 As New SqlDataAdapter(command2)
         Dim table2 As New DataTable()
         adapter2.Fill(table2)
