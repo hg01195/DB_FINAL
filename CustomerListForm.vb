@@ -37,4 +37,5 @@ Public Class CustomerListForm
         UserLoginForm.Show()
         Me.Close()
     End Sub
+
 End Class
