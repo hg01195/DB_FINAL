@@ -12,36 +12,34 @@ Public Class EmployeeListForm
         Me.Close()
     End Sub
 
-    Private Sub newEmployeeButton_Click(sender As Object, e As EventArgs) Handles newEmployeeButton.Click
-        NewEmployeeForm.Show()
+    Private Sub newStaffButton_Click(sender As Object, e As EventArgs) Handles newStaffButton.Click
+        NewStaffForm.Show()
         Me.Close()
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-
-        Dim Adpt As New SqlDataAdapter("Select * From Employee", connection)
-
-        Dim ds As New DataSet()
-
-        Adpt.Fill(ds, "Emp")
-
-        DataGridView1.DataSource = ds.Tables(0)
+    Private Sub newAdminButton_Click(sender As Object, e As EventArgs) Handles newAdminButton.Click
+        NewAdminForm.Show()
+        Me.Close()
     End Sub
 
-    Private Sub dataGridViewButton_Click(sender As Object, e As EventArgs) Handles dataGridViewButton.Click
-        Dim adapter As New SqlDataAdapter
-        Dim table As New DataTable
-        Dim binding As New BindingSource
-
+    Private Sub CustomerListForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim connection As New SqlConnection(SQLcONN)
+        Dim id, rewid, custid, firstname, lastname
         connection.Open()
+        Using getEmp As New SqlCommand("SELECT e.EmployeeID, e.RewardsID, e.CustomerID, e.EmpFirstName, e.EmpLastName FROM Employee e;", connection)
 
-        Dim command As New SqlCommand("Select * From Employee", connection)
-        adapter.SelectCommand = command
-        adapter.Fill(table)
-        binding.DataSource = table
-        DataGridView1.DataSource = binding
-        adapter.Update(table)
+            Dim readEmp As SqlDataReader
 
-        connection.Close()
+            readEmp = getEmp.ExecuteReader()
+            While readEmp.Read
+                id = readEmp("EmployeeID").ToString()
+                rewid = readEmp("RewardsID").ToString()
+                custid = readEmp("CustomerID").ToString()
+                firstname = readEmp("EmpFirstName").ToString()
+                lastname = readEmp("EmpLastName").ToString()
+                DataGridView1.Rows.Add(New String() {id, rewid, custid, firstname, lastname})
+            End While
+            connection.Close()
+        End Using
     End Sub
 End Class
