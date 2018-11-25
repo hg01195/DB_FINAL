@@ -32,11 +32,6 @@ Public Class NewStaffForm
             If command.ExecuteNonQuery() = 1 And command2.ExecuteNonQuery() = 1 Then
 
                 MessageBox.Show("New Staff Added")
-
-            Else
-
-                MessageBox.Show("Staff Not Added")
-
             End If
         Catch exception As FormatException
             MessageBox.Show("Invalid Input")
@@ -129,11 +124,6 @@ Public Class NewStaffForm
             If command.ExecuteNonQuery() = 1 And command2.ExecuteNonQuery() = 1 Then
 
                 MessageBox.Show("Staff Updated")
-
-            Else
-
-                MessageBox.Show("Staff Not Updated")
-
             End If
         Catch excpetion As FormatException
             MessageBox.Show("Nothing To Update Or Employee Not Found")

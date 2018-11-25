@@ -12,6 +12,12 @@ Public Class UserLoginForm
     End Sub
 
     Private Sub Submit_Click(sender As Object, e As EventArgs) Handles submitButton.Click
+        custID = Nothing
+        staffID = Nothing
+        adminID = Nothing
+        addressID = Nothing
+        FirstName = Nothing
+
         Dim custQuery As String = "select * from customers where FirstName = @fname and Password = @password"
         Dim staffQuery As String = "select * from employee e left join staff s on e.employeeID = s.employeeID where EmpFirstName = @fname and Password = @password"
         Dim adminQuery As String = "select * from employee e left join admins a on e.employeeID = a.employeeID where EmpFirstName = @fname and AdminPassword = @password"
@@ -39,7 +45,7 @@ Public Class UserLoginForm
                     'takes you to the customer form if they are a customer
                     If custID > 0 Then
 
-                        CustomerForm.Show()
+                        HelloCustomerForm.Show()
                         Me.Close()
                         'takes you to the staff form if they are staff
                     ElseIf staffID > 0 Then
@@ -49,8 +55,10 @@ Public Class UserLoginForm
                     ElseIf adminID > 0 Then
                         AdminForm.Show()
                         Me.Close()
+                    Else
+                        MessageBox.Show("User not found")
                     End If
-
+                    connection.Close()
                 End Using
             End Using
         End Using

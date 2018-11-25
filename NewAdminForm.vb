@@ -32,10 +32,6 @@ Public Class NewAdminForm
 
                 MessageBox.Show("New Admin Added")
 
-            Else
-
-                MessageBox.Show("Admin Not Added")
-
             End If
         Catch exception As FormatException
             MessageBox.Show("Invalid Input")
@@ -122,10 +118,6 @@ Public Class NewAdminForm
             If command.ExecuteNonQuery() = 1 And command2.ExecuteNonQuery() = 1 Then
 
                 MessageBox.Show("Admin Updated")
-
-            Else
-
-                MessageBox.Show("Admin Not Updated")
 
             End If
         Catch excpetion As FormatException
