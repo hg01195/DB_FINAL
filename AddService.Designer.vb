@@ -52,6 +52,8 @@ Partial Class AddService
         Me.City = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DiscountAmount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmployeeID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
         CType(Me.SERVICESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Database_FinalDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -272,12 +274,32 @@ Partial Class AddService
         Me.EmployeeID.HeaderText = "EmployeeID"
         Me.EmployeeID.Name = "EmployeeID"
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(35, 711)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(168, 44)
+        Me.Button4.TabIndex = 36
+        Me.Button4.Text = "Back"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(420, 711)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(168, 44)
+        Me.Button5.TabIndex = 37
+        Me.Button5.Text = "Log Out"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
         'AddService
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1823, 1037)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.EmployeeID_TB)
@@ -335,4 +357,6 @@ Partial Class AddService
     Friend WithEvents City As DataGridViewTextBoxColumn
     Friend WithEvents DiscountAmount As DataGridViewTextBoxColumn
     Friend WithEvents EmployeeID As DataGridViewTextBoxColumn
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
 End Class

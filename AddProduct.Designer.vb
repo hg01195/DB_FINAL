@@ -49,6 +49,8 @@ Partial Class AddProduct
         Me.DiscountPercent = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ListPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StockNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
         CType(Me.Database_FinalDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PRODUCTSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -257,12 +259,32 @@ Partial Class AddProduct
         Me.StockNo.Name = "StockNo"
         Me.StockNo.ReadOnly = True
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(28, 709)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(168, 43)
+        Me.Button4.TabIndex = 19
+        Me.Button4.Text = "Back"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(413, 709)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(168, 43)
+        Me.Button5.TabIndex = 20
+        Me.Button5.Text = "Log Out"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
         'AddProduct
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(2474, 828)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -316,4 +338,6 @@ Partial Class AddProduct
     Friend WithEvents DiscountPercent As DataGridViewTextBoxColumn
     Friend WithEvents ListPrice As DataGridViewTextBoxColumn
     Friend WithEvents StockNo As DataGridViewTextBoxColumn
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
 End Class

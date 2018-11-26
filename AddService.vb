@@ -146,4 +146,14 @@ Public Class AddService
         End If
         load_table()
     End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        AdminForm.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        UserLoginForm.Show()
+        Me.Close()
+    End Sub
 End Class

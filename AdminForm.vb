@@ -10,7 +10,7 @@
     End Sub
 
     Private Sub productListButton_Click(sender As Object, e As EventArgs) Handles productListButton.Click
-        ProductListForm.Show()
+        AddProduct.Show()
         Me.Close()
     End Sub
 
@@ -20,7 +20,7 @@
     End Sub
 
     Private Sub serviceListButton_Click(sender As Object, e As EventArgs) Handles serviceListButton.Click
-        ServicesForm.Show()
+        AddService.Show()
         Me.Close()
     End Sub
 End Class
