@@ -5,8 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{BC77B932-A775-4B1C-AFA8-788187562A02}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>DB_FINAL.My.MyApplication</StartupObject>
     <RootNamespace>DB_FINAL</RootNamespace>
     <AssemblyName>WindowsApplication</AssemblyName>
     <FileAlignment>512</FileAlignment>

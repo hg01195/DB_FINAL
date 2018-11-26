@@ -4,6 +4,7 @@
     Public adminID
     Public FirstName
     Public addressID
+    Public custRe = 0
 
-    Public SQLcONN = "Server= DESKTOP-IGRIGM7; Database = Database_Final; Integrated Security = true"
+    Public SQLcONN = "Server= DESKTOP-6IUFVL0\SQLEXPRESS; Database = Database_Final; Integrated Security = true"
 End Module
