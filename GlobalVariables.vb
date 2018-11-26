@@ -9,5 +9,5 @@
     Public ssale1(100)
     Public ssale2(100)
 
-    Public SQLcONN = "Server= DESKTOP-2GRDVMP\SQLEXPRESS; Database = Database_Final; Integrated Security = true"
+    Public SQLcONN = "Server= DESKTOP-6IUFVL0\SQLEXPRESS; Database = Database_Final; Integrated Security = true"
 End Module

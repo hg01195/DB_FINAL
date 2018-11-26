@@ -24,4 +24,17 @@ Public Class RewardMembersForm
         HelloCustomerForm.Show()
         Me.Close()
     End Sub
+
+    Private Sub AddToCart_Rewards_Click(sender As Object, e As EventArgs) Handles AddToCart_Rewards.Click
+        If gold.Checked = True And platinum.Checked = True Then
+            MessageBox.Show("Do not check both boxs")
+        ElseIf gold.Checked Then
+            custRe = 1
+            MessageBox.Show("Added")
+        ElseIf platinum.Checked Then
+            custRe = 2
+            MessageBox.Show("Added")
+        End If
+
+    End Sub
 End Class

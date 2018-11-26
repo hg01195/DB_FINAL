@@ -24,15 +24,20 @@ Partial Class EmployeeListForm
     Private Sub InitializeComponent()
         Me.logOut = New System.Windows.Forms.Button()
         Me.back = New System.Windows.Forms.Button()
-        Me.newEmployeeButton = New System.Windows.Forms.Button()
-        Me.dataGridViewButton = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.EmployeeID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RewardID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CustomerID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FirstName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LastName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.newAdminButton = New System.Windows.Forms.Button()
+        Me.newStaffButton = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'logOut
         '
-        Me.logOut.Location = New System.Drawing.Point(713, 12)
+        Me.logOut.Location = New System.Drawing.Point(663, 6)
         Me.logOut.Name = "logOut"
         Me.logOut.Size = New System.Drawing.Size(75, 23)
         Me.logOut.TabIndex = 0
@@ -41,48 +46,74 @@ Partial Class EmployeeListForm
         '
         'back
         '
-        Me.back.Location = New System.Drawing.Point(713, 415)
+        Me.back.Location = New System.Drawing.Point(663, 426)
         Me.back.Name = "back"
         Me.back.Size = New System.Drawing.Size(75, 23)
         Me.back.TabIndex = 1
         Me.back.Text = "Back"
         Me.back.UseVisualStyleBackColor = True
         '
-        'newEmployeeButton
-        '
-        Me.newEmployeeButton.Location = New System.Drawing.Point(13, 414)
-        Me.newEmployeeButton.Name = "newEmployeeButton"
-        Me.newEmployeeButton.Size = New System.Drawing.Size(115, 23)
-        Me.newEmployeeButton.TabIndex = 2
-        Me.newEmployeeButton.Text = "New Employee"
-        Me.newEmployeeButton.UseVisualStyleBackColor = True
-        '
-        'dataGridViewButton
-        '
-        Me.dataGridViewButton.Location = New System.Drawing.Point(512, 414)
-        Me.dataGridViewButton.Name = "dataGridViewButton"
-        Me.dataGridViewButton.Size = New System.Drawing.Size(93, 23)
-        Me.dataGridViewButton.TabIndex = 3
-        Me.dataGridViewButton.Text = "Load Table"
-        Me.dataGridViewButton.UseVisualStyleBackColor = True
-        '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(22, 23)
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.EmployeeID, Me.RewardID, Me.CustomerID, Me.FirstName, Me.LastName})
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 35)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(583, 385)
+        Me.DataGridView1.Size = New System.Drawing.Size(726, 385)
         Me.DataGridView1.TabIndex = 4
+        '
+        'EmployeeID
+        '
+        Me.EmployeeID.HeaderText = "EmployeeID"
+        Me.EmployeeID.Name = "EmployeeID"
+        '
+        'RewardID
+        '
+        Me.RewardID.HeaderText = "RewardID"
+        Me.RewardID.Name = "RewardID"
+        '
+        'CustomerID
+        '
+        Me.CustomerID.HeaderText = "CustomerID"
+        Me.CustomerID.Name = "CustomerID"
+        '
+        'FirstName
+        '
+        Me.FirstName.HeaderText = "First Name"
+        Me.FirstName.Name = "FirstName"
+        '
+        'LastName
+        '
+        Me.LastName.HeaderText = "Last Name"
+        Me.LastName.Name = "LastName"
+        '
+        'newAdminButton
+        '
+        Me.newAdminButton.Location = New System.Drawing.Point(117, 426)
+        Me.newAdminButton.Name = "newAdminButton"
+        Me.newAdminButton.Size = New System.Drawing.Size(99, 23)
+        Me.newAdminButton.TabIndex = 6
+        Me.newAdminButton.Text = "New Admin"
+        Me.newAdminButton.UseVisualStyleBackColor = True
+        '
+        'newStaffButton
+        '
+        Me.newStaffButton.Location = New System.Drawing.Point(12, 426)
+        Me.newStaffButton.Name = "newStaffButton"
+        Me.newStaffButton.Size = New System.Drawing.Size(99, 23)
+        Me.newStaffButton.TabIndex = 5
+        Me.newStaffButton.Text = "New Staff"
+        Me.newStaffButton.UseVisualStyleBackColor = True
         '
         'EmployeeListForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(808, 458)
+        Me.ClientSize = New System.Drawing.Size(751, 458)
+        Me.Controls.Add(Me.newAdminButton)
+        Me.Controls.Add(Me.newStaffButton)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.dataGridViewButton)
-        Me.Controls.Add(Me.newEmployeeButton)
         Me.Controls.Add(Me.back)
         Me.Controls.Add(Me.logOut)
         Me.Name = "EmployeeListForm"
@@ -94,7 +125,12 @@ Partial Class EmployeeListForm
 
     Friend WithEvents logOut As Button
     Friend WithEvents back As Button
-    Friend WithEvents newEmployeeButton As Button
-    Friend WithEvents dataGridViewButton As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents newAdminButton As Button
+    Friend WithEvents newStaffButton As Button
+    Friend WithEvents EmployeeID As DataGridViewTextBoxColumn
+    Friend WithEvents RewardID As DataGridViewTextBoxColumn
+    Friend WithEvents CustomerID As DataGridViewTextBoxColumn
+    Friend WithEvents FirstName As DataGridViewTextBoxColumn
+    Friend WithEvents LastName As DataGridViewTextBoxColumn
 End Class

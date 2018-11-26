@@ -18,4 +18,9 @@
         CustomerListForm.Show()
         Me.Close()
     End Sub
+
+    Private Sub serviceListButton_Click(sender As Object, e As EventArgs) Handles serviceListButton.Click
+        ServicesForm.Show()
+        Me.Close()
+    End Sub
 End Class
