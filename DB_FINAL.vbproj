@@ -5,8 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{BC77B932-A775-4B1C-AFA8-788187562A02}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>DB_FINAL.My.MyApplication</StartupObject>
     <RootNamespace>DB_FINAL</RootNamespace>
     <AssemblyName>WindowsApplication</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -74,6 +73,18 @@
     <Compile Include="AddCustomerWithAddress.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AddProduct.Designer.vb">
+      <DependentUpon>AddProduct.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddService.Designer.vb">
+      <DependentUpon>AddService.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddService.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AdminForm.Designer.vb">
       <DependentUpon>AdminForm.vb</DependentUpon>
     </Compile>
@@ -85,6 +96,11 @@
     </Compile>
     <Compile Include="CustomerListForm.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Database_FinalDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database_FinalDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="EmployeeListForm.Designer.vb">
       <DependentUpon>EmployeeListForm.vb</DependentUpon>
@@ -102,6 +118,11 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="NewAdminForm.Designer.vb">
       <DependentUpon>NewAdminForm.vb</DependentUpon>
@@ -181,6 +202,12 @@
     <EmbeddedResource Include="AddCustomerWithAddress.resx">
       <DependentUpon>AddCustomerWithAddress.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddProduct.resx">
+      <DependentUpon>AddProduct.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddService.resx">
+      <DependentUpon>AddService.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -208,8 +235,14 @@
     <EmbeddedResource Include="OrdersForm.resx">
       <DependentUpon>OrdersForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProductsForm.resx">
+      <DependentUpon>ProductsForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RewardMembersForm.resx">
       <DependentUpon>RewardMembersForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServicesForm.resx">
+      <DependentUpon>ServicesForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffForm.resx">
       <DependentUpon>StaffForm.vb</DependentUpon>
@@ -223,6 +256,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Database_FinalDataSet.xsc">
+      <DependentUpon>Database_FinalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Database_FinalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database_FinalDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database_FinalDataSet.xss">
+      <DependentUpon>Database_FinalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\DB_FINAL\v15\" />

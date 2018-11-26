@@ -12,16 +12,15 @@ Option Strict On
 Option Explicit On
 
 
-Namespace My
+
+<Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
+ Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0"),  _
+ Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
+Partial Friend NotInheritable Class MySettings
+    Inherits Global.System.Configuration.ApplicationSettingsBase
     
-    <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.8.0.0"),  _
-     Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
-    Partial Friend NotInheritable Class MySettings
-        Inherits Global.System.Configuration.ApplicationSettingsBase
-        
-        Private Shared defaultInstance As MySettings = CType(Global.System.Configuration.ApplicationSettingsBase.Synchronized(New MySettings()),MySettings)
-        
+    Private Shared defaultInstance As MySettings = CType(Global.System.Configuration.ApplicationSettingsBase.Synchronized(New MySettings()),MySettings)
+    
 #Region "My.Settings Auto-Save Functionality"
 #If _MyType = "WindowsForms" Then
     Private Shared addedHandler As Boolean
@@ -36,10 +35,10 @@ Namespace My
     End Sub
 #End If
 #End Region
-        
-        Public Shared ReadOnly Property [Default]() As MySettings
-            Get
-                
+    
+    Public Shared ReadOnly Property [Default]() As MySettings
+        Get
+            
 #If _MyType = "WindowsForms" Then
                If Not addedHandler Then
                     SyncLock addedHandlerLockObject
@@ -50,32 +49,31 @@ Namespace My
                     End SyncLock
                 End If
 #End If
-                Return defaultInstance
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=JACOB;Initial Catalog=MyGuitarShop;Integrated Security=True")>  _
-        Public ReadOnly Property MyGuitarShopConnectionString() As String
-            Get
-                Return CType(Me("MyGuitarShopConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-S17TOU1U\HIYASQL;Initial Catalog=Database_Final;Integrated Sec"& _ 
-            "urity=True")>  _
-        Public ReadOnly Property Database_FinalConnectionString() As String
-            Get
-                Return CType(Me("Database_FinalConnectionString"),String)
-            End Get
-        End Property
-    End Class
-End Namespace
+            Return defaultInstance
+        End Get
+    End Property
+    
+    <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("Data Source=JACOB;Initial Catalog=MyGuitarShop;Integrated Security=True")>  _
+    Public ReadOnly Property MyGuitarShopConnectionString() As String
+        Get
+            Return CType(Me("MyGuitarShopConnectionString"),String)
+        End Get
+    End Property
+    
+    <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-S17TOU1U\HIYASQL;Initial Catalog=Database_Final;Integrated Sec"& _ 
+        "urity=True")>  _
+    Public ReadOnly Property Database_FinalConnectionString() As String
+        Get
+            Return CType(Me("Database_FinalConnectionString"),String)
+        End Get
+    End Property
+End Class
 
 Namespace My
     
@@ -85,9 +83,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.Customer_GUI_MKI.My.MySettings
+        Friend ReadOnly Property Settings() As Global.DB_FINAL.MySettings
             Get
-                Return Global.Customer_GUI_MKI.My.MySettings.Default
+                Return Global.DB_FINAL.MySettings.Default
             End Get
         End Property
     End Module
