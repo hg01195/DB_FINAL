@@ -44,7 +44,7 @@ Public Class ServicesForm
         Me.Close()
     End Sub
 
-    Private Sub PRODUCTSDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles PRODUCTSDataGridView.CellDoubleClick
+    Private Sub SERVICESDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles SERVICESDataGridView.CellDoubleClick
         Dim Message, Title, DefaultQ As String
         Message = "Quantity?"
         Title = "Enter Quantity"
