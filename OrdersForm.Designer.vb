@@ -34,6 +34,7 @@ Partial Class OrdersForm
         Me.txtRe = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.btnLog = New System.Windows.Forms.Button()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label5
@@ -139,11 +140,21 @@ Partial Class OrdersForm
         Me.btnLog.Text = "Log Out"
         Me.btnLog.UseVisualStyleBackColor = True
         '
+        'btnBack
+        '
+        Me.btnBack.Location = New System.Drawing.Point(79, 176)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(75, 23)
+        Me.btnBack.TabIndex = 25
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = True
+        '
         'OrdersForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(687, 419)
+        Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnLog)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtRe)
@@ -174,4 +185,5 @@ Partial Class OrdersForm
     Friend WithEvents txtRe As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents btnLog As Button
+    Friend WithEvents btnBack As Button
 End Class
