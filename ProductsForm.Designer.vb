@@ -40,6 +40,8 @@ Partial Class ProductsForm
         Me.Amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.PRODUCTSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Database_FinalDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MyGuitarShopDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -159,12 +161,30 @@ Partial Class ProductsForm
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(1518, 624)
+        Me.Button2.Location = New System.Drawing.Point(1518, 578)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(193, 43)
         Me.Button2.TabIndex = 3
         Me.Button2.Text = "Add to Orders"
         Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(1518, 79)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(193, 44)
+        Me.Button3.TabIndex = 4
+        Me.Button3.Text = "Back"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(1518, 643)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(193, 40)
+        Me.Button4.TabIndex = 5
+        Me.Button4.Text = "To Orders"
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'ProductsForm
         '
@@ -172,6 +192,8 @@ Partial Class ProductsForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1723, 782)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ToServices)
@@ -204,4 +226,6 @@ Partial Class ProductsForm
     Friend WithEvents StockNo As DataGridViewTextBoxColumn
     Friend WithEvents Amount As DataGridViewTextBoxColumn
     Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
 End Class
