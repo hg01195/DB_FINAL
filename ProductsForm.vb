@@ -60,7 +60,12 @@ Public Class ProductsForm
         Dim quantity As String
 
         quantity = InputBox(Message, Title, DefaultQ)
-        rows.Cells(6).Value = Integer.Parse(quantity)
+        Try
+            rows.Cells(6).Value = Integer.Parse(quantity)
+        Catch ex As FormatException
+            MessageBox.Show("Invalid input")
+        End Try
+
 
     End Sub
 
