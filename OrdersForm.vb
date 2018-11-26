@@ -2,6 +2,7 @@
 
 Public Class OrdersForm
     Dim connection As New SqlConnection(SQLcONN)
+    Dim orNum As Int16
 
     Private Sub btnGet_Click(sender As Object, e As EventArgs)
         connection.Open()
@@ -35,12 +36,6 @@ Public Class OrdersForm
         insert into ORDERS(OrderID, CustomerID, OrderDate, ShipAddressID, CardType, CardNumber, CardExpires, BillingAddressID) 
         values(@oid,@cid,@od,@said,@ct,@cn,@ce,@baid)", connection)
 
-        Dim rowNum As New SqlCommand("select count(OrderID) as num from ORDERS", connection)
-        Dim rowA As New SqlDataAdapter(rowNum)
-        Dim tableNum As New DataTable()
-        rowA.Fill(tableNum)
-        Dim orNum As Int16 = Convert.ToInt16(tableNum.Rows(0)(0)) + 1
-
         Dim addressid As New SqlCommand("select ShippingAddressID,BillingAddressID from CUSTOMERS where CustomerID = @CustomerID", connection)
         addressid.Parameters.Add(New SqlParameter("@CustomerID", SqlDbType.Int)).Value = custID
         Dim addi As New SqlDataAdapter(addressid)
@@ -71,50 +66,57 @@ Public Class OrdersForm
 
         End If
 
-        'to be removed and reworked when data of what is to be ordered is there
-        'Dim command2 As New SqlCommand("select ProductName, Quantity, ItemPrice, DiscountAmount, (ItemPrice - DiscountAmount) as Total from ORDER_ITEMS oi, PRODUCTS p where oi.ProductID = p.ProductID and OrderID = @OrderID", connection)
-        'command2.Parameters.Add(New SqlParameter("@OrderID", SqlDbType.Int)).Value = orNum
-        'Dim adapter As New SqlDataAdapter(command2)
-        'Dim table As New DataTable()
-        'adapter.Fill(table)
+        Dim rowNum As New SqlCommand("select count(*) as num from ORDER_ITEMS", connection)
+        Dim rowA As New SqlDataAdapter(rowNum)
+        Dim tableNum As New DataTable()
+        rowA.Fill(tableNum)
+        Dim iNum As Int16 = Convert.ToInt16(tableNum.Rows(0)(0)) + 1
 
-        'Dim disTotal As Double = 0
-        'Dim grandTotal As Double = 0
+        If count1 > 0 Then
+            For i As Int16 = 0 To count1
+                Dim command2 As New SqlCommand("
+            insert into ORDER_ITEMS(ItemID,OrderID, ProductID, ItemPrice, DiscountAmount, Quantity) 
+            values(@iID,@oID,@pID,@ip,@da,@qa)", connection)
 
-        'txtRe.AppendText("Order Number: " + orNum.ToString())
-        'txtRe.AppendText(Environment.NewLine)
-        'txtRe.AppendText(Environment.NewLine)
-        'txtRe.AppendText("Items Ordered: ")
-        'For i As Int16 = 0 To table.Rows.Count - 1
+                Dim command3 As New SqlCommand("select ListPrice, (ListPrice * DiscountPercent/100) as DiscountAmount from PRODUCTS p where  p.ProductID = @ProductID", connection)
+                command3.Parameters.Add(New SqlParameter("@ProductID", SqlDbType.Int)).Value = psale1(i)
+                Dim adapter3 As New SqlDataAdapter(command3)
+                Dim table3 As New DataTable()
+                adapter3.Fill(table3)
 
-        '    txtRe.AppendText(table.Rows(i)(1).ToString() + " " + table.Rows(i)(0).ToString() + "  $" + Math.Round(table.Rows(i)(2), 2).ToString())
-        '    txtRe.AppendText(Environment.NewLine)
-        '    txtRe.AppendText("                        ")
-        '    disTotal += table.Rows(i)(3)
-        '    grandTotal += table.Rows(i)(4)
+                command.Parameters.Add("@iID", SqlDbType.Int).Value = iNum
+                iNum += 1
+                command.Parameters.Add("@oID", SqlDbType.Int).Value = orNum
+                command.Parameters.Add("@pID", SqlDbType.Int).Value = psale1(i)
+                command.Parameters.Add("@ip", SqlDbType.Money).Value = table3.Rows(0)(0).ToString()
+                command.Parameters.Add("@da", SqlDbType.Money).Value = table3.Rows(0)(1).ToString()
+                command.Parameters.Add("@qa", SqlDbType.Int).Value = psale2(i)
 
-        'Next
+            Next
+        End If
 
-        'Dim command3 As New SqlCommand("select ProductName, Quantity, ItemPrice, DiscountAmount, (ItemPrice - DiscountAmount) as Total from ORDER_ITEMS oi, PRODUCTS p where oi.ProductID = p.ProductID and OrderID = @OrderID", connection)
-        'command3.Parameters.Add(New SqlParameter("@OrderID", SqlDbType.Int)).Value = orNum
-        'Dim adapter3 As New SqlDataAdapter(command3)
-        'Dim table3 As New DataTable()
-        'adapter.Fill(table3)
+        If count2 > 0 Then
+            For i As Int16 = 0 To count2
+                Dim command2 As New SqlCommand("
+            insert into ORDER_ITEMS(ItemID,OrderID, ServiceID, ItemPrice, DiscountAmount, Quantity) 
+            values(@iID,@oID,@sID,@ip,@da,@qa)", connection)
 
-        'For i As Int16 = 0 To table.Rows.Count - 1
+                Dim command3 As New SqlCommand("select ListPrice, DiscountAmount from SERVICES s where  s.ServiceID = @ServiceID", connection)
+                command3.Parameters.Add(New SqlParameter("@ServiceID", SqlDbType.Int)).Value = ssale1(i)
+                Dim adapter3 As New SqlDataAdapter(command3)
+                Dim table3 As New DataTable()
+                adapter3.Fill(table3)
 
-        '    txtRe.AppendText(table.Rows(i)(1).ToString() + " " + table.Rows(i)(0).ToString() + "  $" + Math.Round(table.Rows(i)(2), 2).ToString())
-        '    txtRe.AppendText(Environment.NewLine)
-        '    txtRe.AppendText("                        ")
-        '    disTotal += table.Rows(i)(3)
-        '    grandTotal += table.Rows(i)(4)
+                command.Parameters.Add("@iID", SqlDbType.Int).Value = iNum
+                iNum += 1
+                command.Parameters.Add("@oID", SqlDbType.Int).Value = orNum
+                command.Parameters.Add("@sID", SqlDbType.Int).Value = ssale1(i)
+                command.Parameters.Add("@ip", SqlDbType.Money).Value = table3.Rows(0)(0).ToString()
+                command.Parameters.Add("@da", SqlDbType.Money).Value = table3.Rows(0)(1).ToString()
+                command.Parameters.Add("@qa", SqlDbType.Int).Value = ssale2(i)
 
-        'Next
-        'txtRe.AppendText(Environment.NewLine)
-        'txtRe.AppendText("Total Discount: $" + Math.Round(disTotal, 2).ToString())
-        'txtRe.AppendText(Environment.NewLine)
-        'txtRe.AppendText("Total Amount: $" + Math.Round(grandTotal, 2).ToString())
-
+            Next
+        End If
 
         connection.Close()
     End Sub
@@ -176,67 +178,75 @@ Public Class OrdersForm
     End Sub
 
     Private Sub OrdersForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim command2 As New SqlCommand("select ProductName, Quantity, ItemPrice, DiscountAmount, (ItemPrice - DiscountAmount) as Total from ORDER_ITEMS oi, PRODUCTS p where oi.ProductID = p.ProductID and OrderID = @OrderID", connection)
-        command2.Parameters.Add(New SqlParameter("@OrderID", SqlDbType.Int)).Value = 7
-        Dim adapter As New SqlDataAdapter(command2)
-        Dim table As New DataTable()
-        adapter.Fill(table)
+        Dim rowNum As New SqlCommand("select count(OrderID) as num from ORDERS", connection)
+        Dim rowA As New SqlDataAdapter(rowNum)
+        Dim tableNum As New DataTable()
+        rowA.Fill(tableNum)
+        orNum = Convert.ToInt16(tableNum.Rows(0)(0)) + 1
+
+        'Dim command2 As New SqlCommand("select ProductName, Quantity, ItemPrice, DiscountAmount, (ItemPrice - DiscountAmount) as Total from ORDER_ITEMS oi, PRODUCTS p where oi.ProductID = p.ProductID and OrderID = @OrderID", connection)
+        'command2.Parameters.Add(New SqlParameter("@OrderID", SqlDbType.Int)).Value = orNum
+        'Dim adapter As New SqlDataAdapter(command2)
+        'Dim table As New DataTable()
+        'adapter.Fill(table)
 
         Dim disTotal As Double = 0
         Dim grandTotal As Double = 0
 
-        txtRe.AppendText("Order Number: " + 7.ToString())
+        txtRe.AppendText("Order Number: " + orNum.ToString())
         txtRe.AppendText(Environment.NewLine)
         txtRe.AppendText(Environment.NewLine)
         txtRe.AppendText("Items Ordered: ")
-        For i As Int16 = 0 To table.Rows.Count - 1
 
-            txtRe.AppendText(table.Rows(i)(1).ToString() + " " + table.Rows(i)(0).ToString() + "  $" + Math.Round(table.Rows(i)(2), 2).ToString())
-            txtRe.AppendText(Environment.NewLine)
-            txtRe.AppendText("                        ")
-            disTotal += table.Rows(i)(3)
-            grandTotal += table.Rows(i)(4)
+        If String.IsNullOrEmpty(psale1(0)) = False Then
 
-        Next
+            For i As Int16 = 0 To count1
+                If psale1(i) > 0 Then
+                    Dim command2 As New SqlCommand("select ProductName, ListPrice, (ListPrice * DiscountPercent) as DiscountAmount, (ListPrice - (ListPrice * DiscountPercent/100)) as Total from PRODUCTS p where  p.ProductID = @ProductID", connection)
+                    command2.Parameters.Add(New SqlParameter("@ProductID", SqlDbType.Int)).Value = psale1(i).ToString()
+                    Dim adapter As New SqlDataAdapter(command2)
+                    Dim table As New DataTable()
+                    adapter.Fill(table)
 
-        'Dim command3 As New SqlCommand("select ProductName, Quantity, ItemPrice, DiscountAmount, (ItemPrice - DiscountAmount) as Total from ORDER_ITEMS oi, PRODUCTS p where oi.ProductID = p.ProductID and OrderID = @OrderID", connection)
-        'command3.Parameters.Add(New SqlParameter("@OrderID", SqlDbType.Int)).Value = 7
-        'Dim adapter3 As New SqlDataAdapter(command3)
-        'Dim table3 As New DataTable()
-        'adapter3.Fill(table3)
 
-        'For i As Int16 = 0 To table3.Rows.Count - 1
+                    txtRe.AppendText(psale2(i).ToString() + " " + table.Rows(0)(0).ToString() + "  $" + Math.Round(table.Rows(0)(3), 2).ToString())
+                    'txtRe.AppendText(1.ToString() + " " + table.Rows(0)(0).ToString() + "  $" + Math.Round(table.Rows(0)(1), 2).ToString())
+                    txtRe.AppendText(Environment.NewLine)
+                    txtRe.AppendText("                        ")
+                    disTotal += table.Rows(0)(1)
+                    grandTotal += table.Rows(0)(2)
+                End If
 
-        '    txtRe.AppendText(table3.Rows(i)(1).ToString() + " " + table3.Rows(i)(0).ToString() + "  $" + Math.Round(table3.Rows(i)(2), 2).ToString())
-        '    txtRe.AppendText(Environment.NewLine)
-        '    txtRe.AppendText("                        ")
-        '    disTotal += table3.Rows(i)(3)
-        '    grandTotal += table3.Rows(i)(4)
+            Next
+        End If
 
-        'Next
+        'If String.IsNullOrEmpty(ssale1(0)) = False Then
+        '    For i As Int16 = 0 To count2
+        '        If ssale1(i) > 0 Then
+        '            Dim command2 As New SqlCommand("select ServiceName, ListPrice, DiscountAmount, (ListPrice - DiscountAmount) as Total from SERVICES s where s.ServiceID = @ServiceID", connection)
+        '            command2.Parameters.Add(New SqlParameter("@ServiceID", SqlDbType.Int)).Value = ssale1(i)
+        '            Dim adapter As New SqlDataAdapter(command2)
+        '            Dim table As New DataTable()
+        '            adapter.Fill(table)
 
-        Dim command4 As New SqlCommand("select s.ServiceName, Quantity, ItemPrice, oi.DiscountAmount, (ItemPrice - oi.DiscountAmount) as Total from ORDER_ITEMS oi, SERVICES s where oi.ServiceID = s.ServiceID and OrderID = @OrderID", connection)
-        command4.Parameters.Add(New SqlParameter("@OrderID", SqlDbType.Int)).Value = 7
-        Dim adapter4 As New SqlDataAdapter(command4)
-        Dim table4 As New DataTable()
-        adapter4.Fill(table4)
 
-        For i As Int16 = 0 To table4.Rows.Count - 1
+        '            txtRe.AppendText(ssale2(i).ToString() + " " + table.Rows(0)(0).ToString() + "  $" + Math.Round(table.Rows(0)(1), 2).ToString())
+        '            txtRe.AppendText(Environment.NewLine)
+        '            txtRe.AppendText("                        ")
+        '            disTotal += table.Rows(0)(2)
+        '            grandTotal += table.Rows(0)(3)
+        '        End If
 
-            txtRe.AppendText(table4.Rows(i)(1).ToString() + " " + table4.Rows(i)(0).ToString() + "  $" + Math.Round(table4.Rows(i)(2), 2).ToString())
-            txtRe.AppendText(Environment.NewLine)
-            txtRe.AppendText("                        ")
-            disTotal += table4.Rows(i)(3)
-            grandTotal += table4.Rows(i)(4)
 
-        Next
+        '    Next
+        'End If
 
-        If custRe = 1 Then
+        If CustRe = 1 Then
             txtRe.AppendText("Gold Rewards Membership $100")
             grandTotal += 100
             txtRe.AppendText(Environment.NewLine)
             txtRe.AppendText("                        ")
-        ElseIf custRe = 2 Then
+        ElseIf CustRe = 2 Then
             txtRe.AppendText("Platinum Rewards Membership $80")
             grandTotal += 80
             txtRe.AppendText(Environment.NewLine)
@@ -253,6 +263,11 @@ Public Class OrdersForm
 
     Private Sub btnLog_Click(sender As Object, e As EventArgs) Handles btnLog.Click
         UserLoginForm.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        ServicesForm.Show()
         Me.Close()
     End Sub
 End Class
