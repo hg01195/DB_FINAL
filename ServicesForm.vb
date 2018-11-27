@@ -70,7 +70,6 @@ Public Class ServicesForm
             If String.IsNullOrEmpty(SERVICESDataGridView.Rows(i).Cells(7).Value) = False And SERVICESDataGridView.Rows(i).Cells(6).Value > 0 Then
                 ssale1(i) = SERVICESDataGridView.Rows(i).Cells(0).Value
                 ssale2(i) = SERVICESDataGridView.Rows(i).Cells(7).Value
-                count2 += 1
             End If
         Next
     End Sub

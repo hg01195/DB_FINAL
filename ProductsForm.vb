@@ -69,7 +69,6 @@ Public Class ProductsForm
             If String.IsNullOrEmpty(PRODUCTSDataGridView.Rows(i).Cells(6).Value) = False And PRODUCTSDataGridView.Rows(i).Cells(6).Value > 0 Then
                 psale1(i) = PRODUCTSDataGridView.Rows(i).Cells(0).Value
                 psale2(i) = PRODUCTSDataGridView.Rows(i).Cells(6).Value
-                count1 += 1
             End If
         Next
     End Sub
