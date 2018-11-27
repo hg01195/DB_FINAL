@@ -14,7 +14,7 @@ Public Class OrdersForm
         values(@oid,@cid,@od,@said,@ct,@cn,@ce,@baid)", connection)
 
         Dim addressid As New SqlCommand("select ShippingAddressID,BillingAddressID from CUSTOMERS where CustomerID = @CustomerID", connection)
-        addressid.Parameters.Add(New SqlParameter("@CustomerID", SqlDbType.Int)).Value = custID
+        addressid.Parameters.Add(New SqlParameter("@CustomerID", SqlDbType.Int)).Value = 1
         Dim addi As New SqlDataAdapter(addressid)
         Dim addT As New DataTable()
         addi.Fill(addT)
