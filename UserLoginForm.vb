@@ -20,8 +20,8 @@ Public Class UserLoginForm
         FirstName = Nothing
 
         Dim custQuery As String = "select * from customers where FirstName = @fname and Password = @password"
-        Dim staffQuery As String = "select * from employee e left join staff s on e.employeeID = s.employeeID where EmpFirstName = @fname and Password = @password"
-        Dim adminQuery As String = "select * from employee e left join admins a on e.employeeID = a.employeeID where EmpFirstName = @fname and AdminPassword = @password"
+        Dim staffQuery As String = "select * from employee e join staff s on e.employeeID = s.employeeID where EmpFirstName = @fname and Password = @password"
+        Dim adminQuery As String = "select * from employee e join admins a on e.employeeID = a.employeeID where EmpFirstName = @fname and AdminPassword = @password"
 
         Using command As New SqlCommand(custQuery, connection)
             Using command2 As New SqlCommand(staffQuery, connection)
@@ -63,5 +63,16 @@ Public Class UserLoginForm
                 End Using
             End Using
         End Using
+    End Sub
+
+    Private Sub UserLoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
+
+        For i As Int16 = 0 To 19
+            ssale1(i) = 0
+            ssale2(i) = 0
+            psale1(i) = 0
+            psale2(i) = 0
+        Next
     End Sub
 End Class

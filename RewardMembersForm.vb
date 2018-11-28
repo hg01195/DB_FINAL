@@ -37,4 +37,8 @@ Public Class RewardMembersForm
         End If
 
     End Sub
+
+    Private Sub RewardMembersForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
+    End Sub
 End Class

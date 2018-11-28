@@ -51,9 +51,10 @@ Partial Class ProductsForm
         '
         'ToServices
         '
-        Me.ToServices.Location = New System.Drawing.Point(1518, 703)
+        Me.ToServices.Location = New System.Drawing.Point(1012, 450)
+        Me.ToServices.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ToServices.Name = "ToServices"
-        Me.ToServices.Size = New System.Drawing.Size(193, 49)
+        Me.ToServices.Size = New System.Drawing.Size(129, 31)
         Me.ToServices.TabIndex = 1
         Me.ToServices.Text = "To Services"
         Me.ToServices.UseVisualStyleBackColor = True
@@ -103,10 +104,11 @@ Partial Class ProductsForm
         Me.PRODUCTSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.PRODUCTSDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProductID, Me.ProductName, Me.Description, Me.DiscountPercent, Me.ListPrice, Me.StockNo, Me.Amount})
         Me.PRODUCTSDataGridView.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.PRODUCTSDataGridView.Location = New System.Drawing.Point(12, 12)
+        Me.PRODUCTSDataGridView.Location = New System.Drawing.Point(8, 8)
+        Me.PRODUCTSDataGridView.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PRODUCTSDataGridView.Name = "PRODUCTSDataGridView"
         Me.PRODUCTSDataGridView.RowTemplate.Height = 33
-        Me.PRODUCTSDataGridView.Size = New System.Drawing.Size(1500, 740)
+        Me.PRODUCTSDataGridView.Size = New System.Drawing.Size(1000, 474)
         Me.PRODUCTSDataGridView.TabIndex = 1
         '
         'ProductID
@@ -152,52 +154,57 @@ Partial Class ProductsForm
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(1518, 12)
+        Me.Button1.Location = New System.Drawing.Point(1012, 8)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(193, 43)
+        Me.Button1.Size = New System.Drawing.Size(129, 28)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Log Out"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(1518, 578)
+        Me.Button2.Location = New System.Drawing.Point(1012, 370)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(193, 43)
+        Me.Button2.Size = New System.Drawing.Size(129, 28)
         Me.Button2.TabIndex = 3
         Me.Button2.Text = "Add to Orders"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(1518, 79)
+        Me.Button3.Location = New System.Drawing.Point(1012, 51)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(193, 44)
+        Me.Button3.Size = New System.Drawing.Size(129, 28)
         Me.Button3.TabIndex = 4
         Me.Button3.Text = "Back"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(1518, 643)
+        Me.Button4.Location = New System.Drawing.Point(1012, 412)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(193, 40)
+        Me.Button4.Size = New System.Drawing.Size(129, 26)
         Me.Button4.TabIndex = 5
         Me.Button4.Text = "To Orders"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'ProductsForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1723, 782)
+        Me.ClientSize = New System.Drawing.Size(1149, 500)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ToServices)
         Me.Controls.Add(Me.PRODUCTSDataGridView)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "ProductsForm"
         Me.Text = "ProductsForm"
         CType(Me.PRODUCTSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

@@ -91,6 +91,7 @@ Public Class AddCustomerWithAddress
     'EXIT
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles CloseButton.Click
         Me.Close()
+        UserLoginForm.Show()
     End Sub
 
     Private Function Int() As Object
@@ -120,6 +121,6 @@ Public Class AddCustomerWithAddress
     End Sub
 
     Private Sub AddCustomerWithAddress_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.CenterToScreen()
     End Sub
 End Class

@@ -11,6 +11,7 @@ Public Class UpdateAddressForm
     Dim connection As New SqlConnection(SQLcONN)
 
     Private Sub UpdateAddressForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
         connection.Open()
 
         Dim command As New SqlCommand("SELECT * FROM Addresses WHERE CustomerID = @cid", connection)
@@ -56,10 +57,14 @@ Public Class UpdateAddressForm
         Try
             command2.ExecuteNonQuery()
             boxShown = False
-
         Catch ex As FormatException
-            MessageBox.Show("Invalid Zip Code. Only integers are allowed at 10 length.")
-            boxShown = True
+            If (BillingZip_TB.Text = String.Empty) Then
+
+            Else
+                MessageBox.Show("Invalid Zip Code. Only integers are allowed at 10 length.")
+                boxShown = True
+            End If
+
         End Try
 
         If (flag = True) Then
@@ -76,8 +81,12 @@ Public Class UpdateAddressForm
                 command4.ExecuteNonQuery()
                 boxShown = False
             Catch ex As FormatException
-                MessageBox.Show("Invalid Zip Code. Only integers are allowed at 10 length.")
-                boxShown = True
+                If (BillingZip_TB.Text = String.Empty) Then
+
+                Else
+                    MessageBox.Show("Invalid Zip Code. Only integers are allowed at 10 length.")
+                    boxShown = True
+                End If
             End Try
         Else
             Dim command3 As New SqlCommand("UPDATE Addresses SET Line1 = @Bline1, Line2 = @Bline2, City = @Bcity, State = @Bstate, ZipCode = @Bzip, Phone = @Bphone WHERE CustomerID = @Bcid AND AddressID = @aid + 1", connection)
@@ -93,8 +102,12 @@ Public Class UpdateAddressForm
                 command3.ExecuteNonQuery()
                 boxShown = False
             Catch ex As FormatException
-                MessageBox.Show("Invalid Zip Code. Only integers are allowed at 10 length.")
-                boxShown = True
+                If (BillingZip_TB.Text = String.Empty) Then
+
+                Else
+                    MessageBox.Show("Invalid Zip Code. Only integers are allowed at 10 length.")
+                    boxShown = True
+                End If
             End Try
         End If
 
@@ -106,9 +119,6 @@ Public Class UpdateAddressForm
             OrderItemsForm.Show()
             Me.Close()
         End If
-
-
-
     End Sub
 
     Private Sub CloseButton_Click(sender As Object, e As EventArgs) Handles CloseButton.Click

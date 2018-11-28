@@ -9,7 +9,7 @@ Public Class NewStaffForm
     End Sub
 
     Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
-        NewEmployeeForm.Show()
+        EmployeeListForm.Show()
         Me.Close()
     End Sub
 
@@ -44,7 +44,7 @@ Public Class NewStaffForm
     Private Sub getButton_Click(sender As Object, e As EventArgs) Handles getButton.Click
         connection.Open()
 
-        Dim command As New SqlCommand("SELECT * FROM Employee e left join Staff s on e.EmployeeID = s.EmployeeID WHERE e.EmployeeID = @eid", connection)
+        Dim command As New SqlCommand("SELECT * FROM Employee e join Staff s on e.EmployeeID = s.EmployeeID WHERE e.EmployeeID = @eid", connection)
         command.Parameters.Add(New SqlParameter("@eid", SqlDbType.Int)).Value = employeeIDTextBox.Text
         Dim adapter As New SqlDataAdapter(command)
         Dim table As New DataTable()
@@ -97,7 +97,7 @@ Public Class NewStaffForm
 
             End If
         Catch exception As FormatException
-            MessageBox.Show("Nothing to Delete Or Employee Not Found")
+            MessageBox.Show("Done")
 
         End Try
 
@@ -132,5 +132,9 @@ Public Class NewStaffForm
 
         'Closes the database connection
         connection.Close()
+    End Sub
+
+    Private Sub NewStaffForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
     End Sub
 End Class

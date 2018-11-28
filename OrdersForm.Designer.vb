@@ -142,7 +142,7 @@ Partial Class OrdersForm
         '
         'btnBack
         '
-        Me.btnBack.Location = New System.Drawing.Point(79, 176)
+        Me.btnBack.Location = New System.Drawing.Point(12, 176)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(75, 23)
         Me.btnBack.TabIndex = 25
