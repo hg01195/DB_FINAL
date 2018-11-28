@@ -41,6 +41,7 @@ Public Class AddCustomerWithAddress
 
         command2.Parameters.Add("@phone", SqlDbType.VarChar).Value = ShippingPhone_TB.Text
 
+        custID = findCID
         command.ExecuteNonQuery()
 
 
@@ -72,6 +73,8 @@ Public Class AddCustomerWithAddress
             command3.Parameters.Add("@state", SqlDbType.VarChar).Value = BillingState_TB.Text.ToUpper
             command3.Parameters.Add("@zip", SqlDbType.Int).Value = BillingZip_TB.Text
             command3.Parameters.Add("@phone", SqlDbType.VarChar).Value = BillingPhone_TB.Text
+
+            custID = findCID
 
             command4.ExecuteNonQuery()
             Try
