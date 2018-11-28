@@ -6,6 +6,7 @@ Public Class AddProduct
 
     Private Sub AddProduct_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_table()
+        Me.CenterToScreen()
     End Sub
 
     Public Sub load_table()

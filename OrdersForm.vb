@@ -146,6 +146,7 @@ Public Class OrdersForm
     End Sub
 
     Private Sub OrdersForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
         Dim rowNum As New SqlCommand("select count(OrderID) as num from ORDERS", connection)
         Dim rowA As New SqlDataAdapter(rowNum)
         Dim tableNum As New DataTable()

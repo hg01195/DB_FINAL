@@ -7,6 +7,7 @@ Public Class CustomerListForm
     End Sub
 
     Private Sub CustomerListForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
         Dim connection As New SqlConnection(SQLcONN)
         Dim id, rew, email, pass, firstname, lastname
         connection.Open()

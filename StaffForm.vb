@@ -5,7 +5,7 @@ Public Class StaffForm
 
 
     Private Sub StaffForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.CenterToScreen()
         Dim connection As New SqlConnection(SQLcONN)
         Dim id, sname, fistname, city, price, oid, quantity
         connection.Open()

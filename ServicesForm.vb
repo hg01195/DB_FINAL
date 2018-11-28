@@ -6,6 +6,7 @@ Public Class ServicesForm
 
     Private Sub ServicesForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_table()
+        Me.CenterToScreen()
     End Sub
 
     Public Sub load_table()
@@ -86,5 +87,9 @@ Public Class ServicesForm
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         OrdersForm.Show()
         Me.Close()
+    End Sub
+
+    Private Sub SERVICESDataGridView_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles SERVICESDataGridView.CellContentClick
+
     End Sub
 End Class

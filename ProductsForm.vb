@@ -5,6 +5,7 @@ Imports System.Net.Mime.MediaTypeNames
 Public Class ProductsForm
 
     Private Sub ProductsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
         load_table()
     End Sub
 
@@ -85,6 +86,11 @@ Public Class ProductsForm
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         HelloCustomerForm.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        UserLoginForm.Show()
         Me.Close()
     End Sub
 End Class

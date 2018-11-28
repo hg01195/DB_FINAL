@@ -78,18 +78,20 @@ Partial Class ServicesForm
         '
         'ToProducts
         '
-        Me.ToProducts.Location = New System.Drawing.Point(1667, 703)
+        Me.ToProducts.Location = New System.Drawing.Point(1111, 450)
+        Me.ToProducts.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ToProducts.Name = "ToProducts"
-        Me.ToProducts.Size = New System.Drawing.Size(195, 49)
+        Me.ToProducts.Size = New System.Drawing.Size(130, 31)
         Me.ToProducts.TabIndex = 1
         Me.ToProducts.Text = "To Products"
         Me.ToProducts.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(1667, 12)
+        Me.Button1.Location = New System.Drawing.Point(1111, 8)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(195, 46)
+        Me.Button1.Size = New System.Drawing.Size(130, 29)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Log Out"
         Me.Button1.UseVisualStyleBackColor = True
@@ -98,10 +100,11 @@ Partial Class ServicesForm
         '
         Me.SERVICESDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SERVICESDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ServiceID, Me.ServiceName, Me.Description, Me.ListPrice, Me.City, Me.DiscountAmount, Me.EmployeeID, Me.Amount})
-        Me.SERVICESDataGridView.Location = New System.Drawing.Point(12, 12)
+        Me.SERVICESDataGridView.Location = New System.Drawing.Point(8, 8)
+        Me.SERVICESDataGridView.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.SERVICESDataGridView.Name = "SERVICESDataGridView"
         Me.SERVICESDataGridView.RowTemplate.Height = 33
-        Me.SERVICESDataGridView.Size = New System.Drawing.Size(1649, 740)
+        Me.SERVICESDataGridView.Size = New System.Drawing.Size(1099, 474)
         Me.SERVICESDataGridView.TabIndex = 0
         '
         'ServiceID
@@ -146,43 +149,47 @@ Partial Class ServicesForm
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(1667, 577)
+        Me.Button2.Location = New System.Drawing.Point(1111, 369)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(195, 45)
+        Me.Button2.Size = New System.Drawing.Size(130, 29)
         Me.Button2.TabIndex = 3
         Me.Button2.Text = "Add To Orders"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(1667, 75)
+        Me.Button3.Location = New System.Drawing.Point(1111, 48)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(195, 46)
+        Me.Button3.Size = New System.Drawing.Size(130, 29)
         Me.Button3.TabIndex = 4
         Me.Button3.Text = "Back"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(1667, 639)
+        Me.Button4.Location = New System.Drawing.Point(1111, 409)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(195, 46)
+        Me.Button4.Size = New System.Drawing.Size(130, 29)
         Me.Button4.TabIndex = 5
         Me.Button4.Text = "To Orders"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'ServicesForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1874, 782)
+        Me.ClientSize = New System.Drawing.Size(1249, 500)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ToProducts)
         Me.Controls.Add(Me.SERVICESDataGridView)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "ServicesForm"
         Me.Text = "ServicesForm"
         CType(Me.Database_FinalDataSet, System.ComponentModel.ISupportInitialize).EndInit()
