@@ -4,6 +4,7 @@ Public Class OrderItemsForm
     Dim connection As New SqlConnection(SQLcONN)
 
     Private Sub OrderItemsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
         connection.Open()
 
         Dim command As New SqlCommand("select distinct oi.Quantity, p.ProductName, oi.ItemPrice, a.Line1,a.City,a.State,a.ZipCode,o.OrderDate,o.ShipDate

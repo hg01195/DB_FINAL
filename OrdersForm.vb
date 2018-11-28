@@ -51,7 +51,7 @@ Public Class OrdersForm
             rowA.Fill(tableNum)
             Dim iNum As Int16 = Convert.ToInt16(tableNum.Rows(0)(0)) + 1
 
-            For i As Int16 = 0 To 9
+            For i As Int16 = 0 To 19
                 If psale1(i) > 0 Then
                     Dim command2 As New SqlCommand("
                     insert into ORDER_ITEMS(ItemID,OrderID, ProductID, ItemPrice, DiscountAmount, Quantity) 
@@ -82,9 +82,11 @@ Public Class OrdersForm
                     End If
                 End If
 
+
+
             Next
 
-            For i As Int16 = 0 To 9
+            For i As Int16 = 0 To 19
                 If ssale1(i) > 0 Then
                     Dim command2 As New SqlCommand("
                 insert into ORDER_ITEMS(ItemID,OrderID, ServiceID, ItemPrice, DiscountAmount, Quantity) 
@@ -121,6 +123,12 @@ Public Class OrdersForm
             MessageBox.Show("Error! Please make sure the info you are entering is correct")
         End Try
 
+        For i As Int16 = 0 To 19
+            ssale1(i) = 0
+            ssale2(i) = 0
+            psale1(i) = 0
+            psale2(i) = 0
+        Next
 
         connection.Close()
     End Sub
@@ -146,6 +154,7 @@ Public Class OrdersForm
     End Sub
 
     Private Sub OrdersForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
         Dim rowNum As New SqlCommand("select count(OrderID) as num from ORDERS", connection)
         Dim rowA As New SqlDataAdapter(rowNum)
         Dim tableNum As New DataTable()
