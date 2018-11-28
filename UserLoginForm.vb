@@ -67,5 +67,12 @@ Public Class UserLoginForm
 
     Private Sub UserLoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
+
+        For i As Int16 = 0 To 19
+            ssale1(i) = 0
+            ssale2(i) = 0
+            psale1(i) = 0
+            psale2(i) = 0
+        Next
     End Sub
 End Class
