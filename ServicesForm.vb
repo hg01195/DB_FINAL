@@ -62,11 +62,15 @@ Public Class ServicesForm
         Dim quantity As String
 
         quantity = InputBox(Message, Title, DefaultQ)
-        Try
-            rows.Cells(7).Value = Integer.Parse(quantity)
-        Catch ex As FormatException
-            MessageBox.Show("Invalid input")
-        End Try
+        If (Integer.Parse(quantity) < 0) Then
+            MessageBox.Show("Enter a positive value")
+        Else
+            Try
+                rows.Cells(6).Value = Integer.Parse(quantity)
+            Catch ex As FormatException
+                MessageBox.Show("Invalid input")
+            End Try
+        End If
 
     End Sub
 
@@ -77,6 +81,7 @@ Public Class ServicesForm
                 ssale2(i) = SERVICESDataGridView.Rows(i).Cells(7).Value
             End If
         Next
+        MessageBox.Show("Order Added")
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
