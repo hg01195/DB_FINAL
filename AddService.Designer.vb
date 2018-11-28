@@ -319,7 +319,7 @@ Partial Class AddService
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "AddService"
-        Me.Text = "Form1"
+        Me.Text = "Services"
         CType(Me.SERVICESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Database_FinalDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
