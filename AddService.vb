@@ -4,6 +4,7 @@ Public Class AddService
     Dim STR As String
     Dim lid As String
     Private Sub AddService_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
         load_table()
     End Sub
 

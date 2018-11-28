@@ -23,6 +23,7 @@ Public Class EmployeeListForm
     End Sub
 
     Private Sub CustomerListForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
         Dim connection As New SqlConnection(SQLcONN)
         Dim id, rewid, custid, firstname, lastname
         connection.Open()
