@@ -11,6 +11,7 @@ Public Class UpdateAddressForm
     Dim connection As New SqlConnection(SQLcONN)
 
     Private Sub UpdateAddressForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
         connection.Open()
 
         Dim command As New SqlCommand("SELECT * FROM Addresses WHERE CustomerID = @cid", connection)
