@@ -27,7 +27,6 @@ Partial Class RewardMembersForm
         Me.Label2 = New System.Windows.Forms.Label()
         Me.platinum = New System.Windows.Forms.CheckBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Empoyee = New System.Windows.Forms.CheckBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.AddToCart_Rewards = New System.Windows.Forms.Button()
@@ -84,16 +83,6 @@ Partial Class RewardMembersForm
         Me.Label3.Text = "Become a platinum member today! With a one time fee " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "of 80$, you get a discount " &
     "rate of 2% " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "on any order henceforth!"
         '
-        'Empoyee
-        '
-        Me.Empoyee.AutoSize = True
-        Me.Empoyee.Location = New System.Drawing.Point(6, 118)
-        Me.Empoyee.Name = "Empoyee"
-        Me.Empoyee.Size = New System.Drawing.Size(244, 17)
-        Me.Empoyee.TabIndex = 9
-        Me.Empoyee.Text = "Employee (can only add if you're an employee)"
-        Me.Empoyee.UseVisualStyleBackColor = True
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -117,7 +106,7 @@ Partial Class RewardMembersForm
         'AddToCart_Rewards
         '
         Me.AddToCart_Rewards.DialogResult = System.Windows.Forms.DialogResult.Retry
-        Me.AddToCart_Rewards.Location = New System.Drawing.Point(172, 157)
+        Me.AddToCart_Rewards.Location = New System.Drawing.Point(136, 157)
         Me.AddToCart_Rewards.Name = "AddToCart_Rewards"
         Me.AddToCart_Rewards.Size = New System.Drawing.Size(101, 26)
         Me.AddToCart_Rewards.TabIndex = 12
@@ -127,8 +116,8 @@ Partial Class RewardMembersForm
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Button1.Location = New System.Drawing.Point(190, 188)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Location = New System.Drawing.Point(154, 188)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(61, 30)
         Me.Button1.TabIndex = 13
@@ -144,7 +133,6 @@ Partial Class RewardMembersForm
         Me.Controls.Add(Me.AddToCart_Rewards)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Empoyee)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.platinum)
         Me.Controls.Add(Me.Label2)
@@ -161,7 +149,6 @@ Partial Class RewardMembersForm
     Friend WithEvents Label2 As Label
     Friend WithEvents platinum As CheckBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents Empoyee As CheckBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents AddToCart_Rewards As Button

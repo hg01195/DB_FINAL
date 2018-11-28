@@ -10,5 +10,5 @@
     Public ssale2() As Int16 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
     Public CustRe
 
-    Public SQLcONN = "Server= DESKTOP-2GRDVMP\SQLEXPRESS; Database = Database_Final; Integrated Security = true"
+    Public SQLcONN = "Server= laptop-s17tou1u\hiyasql; Database = Database_Final; Integrated Security = true"
 End Module

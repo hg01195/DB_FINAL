@@ -34,13 +34,7 @@ Public Class RewardMembersForm
         ElseIf platinum.Checked Then
             custRe = 2
             MessageBox.Show("Added")
-        ElseIf Employee.Checked Then
-            If (GlobalVariables.adminID Is Nothing And GlobalVariables.staffID Is Nothing) Then
-                    MessageBox.Show("You cannot add an employee reward because 
-                    you are not an employee!")
-                End If
-            End If
-        Else CustRe = 3
         End If
+
     End Sub
 End Class
