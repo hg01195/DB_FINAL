@@ -3,6 +3,7 @@
 Public Class OrdersForm
     Dim connection As New SqlConnection(SQLcONN)
     Dim orNum As Int16
+    Dim num As Int16 = 0
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
@@ -19,107 +20,127 @@ Public Class OrdersForm
         Dim addT As New DataTable()
         addi.Fill(addT)
 
-        Try
+        If tbCExp.TextLength > 0 And tbCNum.TextLength > 0 And tbCNum.TextLength < 16 And tbCType.TextLength > 0 Then
 
-            command.Parameters.Add("@oid", SqlDbType.Int).Value = orNum
-            command.Parameters.Add("@cid", SqlDbType.Int).Value = custID
-            Dim regDate As DateTime = DateTime.Now
-            Dim strDate As String = regDate.ToString("yyyy-MM-dd HH:mm:ss")
-            command.Parameters.Add("@od", SqlDbType.DateTime).Value = strDate 'should get current date
-            'command.Parameters.Add("@sd", SqlDbType.DateTime).Value =  'might not work
-            command.Parameters.Add("@said", SqlDbType.Int).Value = addT.Rows(0)(0).ToString()
-            command.Parameters.Add("@ct", SqlDbType.VarChar).Value = tbCType.Text
-            command.Parameters.Add("@cn", SqlDbType.Char).Value = tbCNum.Text
-            command.Parameters.Add("@ce", SqlDbType.Char).Value = tbCExp.Text
-            command.Parameters.Add("@baid", SqlDbType.Int).Value = addT.Rows(0)(1).ToString()
+            Try
 
-            connection.Open()
+                command.Parameters.Add("@oid", SqlDbType.Int).Value = orNum
+                command.Parameters.Add("@cid", SqlDbType.Int).Value = custID
+                Dim regDate As DateTime = DateTime.Now
+                Dim strDate As String = regDate.ToString("yyyy-MM-dd HH:mm:ss")
+                command.Parameters.Add("@od", SqlDbType.DateTime).Value = strDate 'should get current date
+                'command.Parameters.Add("@sd", SqlDbType.DateTime).Value =  'might not work
+                command.Parameters.Add("@said", SqlDbType.Int).Value = addT.Rows(0)(0).ToString()
+                command.Parameters.Add("@ct", SqlDbType.VarChar).Value = tbCType.Text
+                command.Parameters.Add("@cn", SqlDbType.Char).Value = tbCNum.Text
+                command.Parameters.Add("@ce", SqlDbType.Char).Value = tbCExp.Text
+                command.Parameters.Add("@baid", SqlDbType.Int).Value = addT.Rows(0)(1).ToString()
 
-            If command.ExecuteNonQuery() = 1 Then
+                connection.Open()
 
-                MessageBox.Show("New Order Added")
+                If command.ExecuteNonQuery() = 1 Then
 
-            Else
+                    MessageBox.Show("New Order Added")
 
-                MessageBox.Show("Order Not Added")
+                Else
 
-            End If
+                    MessageBox.Show("Order Not Added")
 
-            Dim rowNum As New SqlCommand("select count(*) as num from ORDER_ITEMS", connection)
-            Dim rowA As New SqlDataAdapter(rowNum)
-            Dim tableNum As New DataTable()
-            rowA.Fill(tableNum)
-            Dim iNum As Int16 = Convert.ToInt16(tableNum.Rows(0)(0)) + 1
+                End If
 
-            For i As Int16 = 0 To 9
-                If psale1(i) > 0 Then
-                    Dim command2 As New SqlCommand("
+                Dim rowNum As New SqlCommand("select count(*) as num from ORDER_ITEMS", connection)
+                Dim rowA As New SqlDataAdapter(rowNum)
+                Dim tableNum As New DataTable()
+                rowA.Fill(tableNum)
+                Dim iNum As Int16 = Convert.ToInt16(tableNum.Rows(0)(0)) + 1
+
+                For i As Int16 = 0 To 19
+                    If psale1(i) > 0 Then
+                        Dim command2 As New SqlCommand("
                     insert into ORDER_ITEMS(ItemID,OrderID, ProductID, ItemPrice, DiscountAmount, Quantity) 
                     values(@iID,@oID,@pID,@ip,@da,@qa)", connection)
 
-                    Dim command3 As New SqlCommand("select ListPrice, (ListPrice * DiscountPercent/100) as DiscountAmount from PRODUCTS p where  p.ProductID = @ProductID", connection)
-                    command3.Parameters.Add(New SqlParameter("@ProductID", SqlDbType.Int)).Value = psale1(i)
-                    Dim adapter3 As New SqlDataAdapter(command3)
-                    Dim table3 As New DataTable()
-                    adapter3.Fill(table3)
+                        Dim command3 As New SqlCommand("select ListPrice, (ListPrice * DiscountPercent/100) as DiscountAmount from PRODUCTS p where  p.ProductID = @ProductID", connection)
+                        command3.Parameters.Add(New SqlParameter("@ProductID", SqlDbType.Int)).Value = psale1(i)
+                        Dim adapter3 As New SqlDataAdapter(command3)
+                        Dim table3 As New DataTable()
+                        adapter3.Fill(table3)
 
-                    command2.Parameters.Add("@iID", SqlDbType.Int).Value = iNum
-                    iNum += 1
-                    command2.Parameters.Add("@oID", SqlDbType.Int).Value = orNum
-                    command2.Parameters.Add("@pID", SqlDbType.Int).Value = psale1(i)
-                    command2.Parameters.Add("@ip", SqlDbType.Money).Value = table3.Rows(0)(0).ToString()
-                    command2.Parameters.Add("@da", SqlDbType.Money).Value = table3.Rows(0)(1).ToString()
-                    command2.Parameters.Add("@qa", SqlDbType.Int).Value = psale2(i)
+                        command2.Parameters.Add("@iID", SqlDbType.Int).Value = iNum
+                        iNum += 1
+                        command2.Parameters.Add("@oID", SqlDbType.Int).Value = orNum
+                        command2.Parameters.Add("@pID", SqlDbType.Int).Value = psale1(i)
+                        command2.Parameters.Add("@ip", SqlDbType.Money).Value = table3.Rows(0)(0).ToString()
+                        command2.Parameters.Add("@da", SqlDbType.Money).Value = table3.Rows(0)(1).ToString()
+                        command2.Parameters.Add("@qa", SqlDbType.Int).Value = psale2(i)
 
-                    If command2.ExecuteNonQuery() = 1 Then
+                        If command2.ExecuteNonQuery() = 1 Then
+                            num += 1
 
 
+                        Else
 
-                    Else
+                            MessageBox.Show("Error adding Order")
 
-                        MessageBox.Show("Error adding Order")
-
+                        End If
                     End If
-                End If
 
-            Next
 
-            For i As Int16 = 0 To 9
-                If ssale1(i) > 0 Then
-                    Dim command2 As New SqlCommand("
+
+                Next
+
+                For i As Int16 = 0 To 19
+                    If ssale1(i) > 0 Then
+                        Dim command2 As New SqlCommand("
                 insert into ORDER_ITEMS(ItemID,OrderID, ServiceID, ItemPrice, DiscountAmount, Quantity) 
                 values(@iID,@oID,@sID,@ip,@da,@qa)", connection)
 
-                    Dim command3 As New SqlCommand("select ListPrice, DiscountAmount from SERVICES s where  s.ServiceID = @ServiceID", connection)
-                    command3.Parameters.Add(New SqlParameter("@ServiceID", SqlDbType.Int)).Value = ssale1(i)
-                    Dim adapter3 As New SqlDataAdapter(command3)
-                    Dim table3 As New DataTable()
-                    adapter3.Fill(table3)
+                        Dim command3 As New SqlCommand("select ListPrice, DiscountAmount from SERVICES s where  s.ServiceID = @ServiceID", connection)
+                        command3.Parameters.Add(New SqlParameter("@ServiceID", SqlDbType.Int)).Value = ssale1(i)
+                        Dim adapter3 As New SqlDataAdapter(command3)
+                        Dim table3 As New DataTable()
+                        adapter3.Fill(table3)
 
-                    command2.Parameters.Add("@iID", SqlDbType.Int).Value = iNum
-                    iNum += 1
-                    command2.Parameters.Add("@oID", SqlDbType.Int).Value = orNum
-                    command2.Parameters.Add("@sID", SqlDbType.Int).Value = ssale1(i)
-                    command2.Parameters.Add("@ip", SqlDbType.Money).Value = table3.Rows(0)(0).ToString()
-                    command2.Parameters.Add("@da", SqlDbType.Money).Value = table3.Rows(0)(1).ToString()
-                    command2.Parameters.Add("@qa", SqlDbType.Int).Value = ssale2(i)
+                        command2.Parameters.Add("@iID", SqlDbType.Int).Value = iNum
+                        iNum += 1
+                        command2.Parameters.Add("@oID", SqlDbType.Int).Value = orNum
+                        command2.Parameters.Add("@sID", SqlDbType.Int).Value = ssale1(i)
+                        command2.Parameters.Add("@ip", SqlDbType.Money).Value = table3.Rows(0)(0).ToString()
+                        command2.Parameters.Add("@da", SqlDbType.Money).Value = table3.Rows(0)(1).ToString()
+                        command2.Parameters.Add("@qa", SqlDbType.Int).Value = ssale2(i)
 
-                    If command2.ExecuteNonQuery() = 1 Then
+                        If command2.ExecuteNonQuery() = 1 Then
+                            num += 1
 
 
+                        Else
 
-                    Else
+                            MessageBox.Show("Error adding Order")
 
-                        MessageBox.Show("Error adding Order")
-
+                        End If
                     End If
-                End If
 
-            Next
+                Next
 
-        Catch ex As FormatException
-            MessageBox.Show("Error! Please make sure the info you are entering is correct")
-        End Try
+            Catch ex As FormatException
+                MessageBox.Show("Error! Please make sure the info you are entering is correct")
+            End Try
+
+            If num > 0 Then
+                For i As Int16 = 0 To 19
+                    ssale1(i) = 0
+                    ssale2(i) = 0
+                    psale1(i) = 0
+                    psale2(i) = 0
+                Next
+            End If
+
+        Else
+            MessageBox.Show("Please put somthing in the text box")
+
+        End If
+
+
 
 
         connection.Close()
