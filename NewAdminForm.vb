@@ -9,7 +9,7 @@ Public Class NewAdminForm
     End Sub
 
     Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
-        NewEmployeeForm.Show()
+        EmployeeListForm.Show()
         Me.Close()
     End Sub
 
@@ -58,17 +58,12 @@ Public Class NewAdminForm
             command2.ExecuteNonQuery()
 
             ''ExecuteNonQuery() executes the sql query you wrote out above
-            If command3.ExecuteNonQuery() = 1 Then
+            command3.ExecuteNonQuery()
 
-                MessageBox.Show("Admin Deleted")
+            MessageBox.Show("Admin Deleted")
 
-            Else
-
-                MessageBox.Show("Admin Not Deleted")
-
-            End If
         Catch exception As FormatException
-            MessageBox.Show("Nothing to Delete Or Employee Not Found")
+            MessageBox.Show("Done")
 
         End Try
         connection.Close()
@@ -77,7 +72,7 @@ Public Class NewAdminForm
     Private Sub getButton_Click(sender As Object, e As EventArgs) Handles getButton.Click
         connection.Open()
 
-        Dim command As New SqlCommand("SELECT * FROM Admins a  left join Employee e on a.EmployeeID = e.EmployeeID WHERE a.EmployeeID = @eid", connection)
+        Dim command As New SqlCommand("SELECT * FROM Admins a join Employee e on a.EmployeeID = e.EmployeeID WHERE a.EmployeeID = @eid", connection)
         command.Parameters.Add(New SqlParameter("@eid", SqlDbType.Int)).Value = employeeIDTextBox.Text
         Dim adapter As New SqlDataAdapter(command)
         Dim table As New DataTable()
@@ -127,5 +122,9 @@ Public Class NewAdminForm
 
         'Closes the database connection
         connection.Close()
+    End Sub
+
+    Private Sub NewAdminForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
     End Sub
 End Class
