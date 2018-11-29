@@ -10,7 +10,7 @@ Public Class OrderItemsForm
         Dim command As New SqlCommand("select distinct oi.Quantity, p.ProductName, oi.ItemPrice, a.Line1,a.City,a.State,a.ZipCode,o.OrderDate,o.ShipDate
         from ORDERS o join ORDER_ITEMS oi on o.OrderID = oi.orderid
         join PRODUCTS p on oi.ProductID = p.ProductID join ADDRESSES a on o.CustomerID = a.CustomerID
-        where o.CustomerID = @CustomerID and o.ShipAddressID = a.AddressID", connection)
+        where o.CustomerID = @CustomerID", connection)
         command.Parameters.Add(New SqlParameter("@CustomerID", SqlDbType.Int)).Value = custID
         Dim adapter As New SqlDataAdapter(command)
         Dim table As New DataTable()
@@ -21,7 +21,7 @@ Public Class OrderItemsForm
         Dim command2 As New SqlCommand("select distinct oi.Quantity, s.ServiceName, oi.ItemPrice, a.Line1,a.City,a.State,a.ZipCode,o.OrderDate
         from ORDERS o join ORDER_ITEMS oi on o.OrderID = oi.orderid
         join SERVICES s on oi.ServiceID = s.ServiceID join ADDRESSES a on o.CustomerID = a.CustomerID
-        where o.CustomerID = @CustomerID and o.ShipAddressID = a.AddressID", connection)
+        where o.CustomerID = @CustomerID", connection)
         command2.Parameters.Add(New SqlParameter("@CustomerID", SqlDbType.Int)).Value = custID
         Dim adapter2 As New SqlDataAdapter(command2)
         Dim table2 As New DataTable()
