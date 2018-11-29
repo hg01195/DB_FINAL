@@ -10,5 +10,5 @@
     Public ssale2(19) As Int16
     Public CustRe
 
-    Public SQLcONN = "Server= DESKTOP-6IUFVL0\SQLEXPRESS; Database = Database_Final; Integrated Security = true"
+    Public SQLcONN = "Server= DESKTOP-NGLEQ69\ZACHPC; Database = Database_Final; Integrated Security = true"
 End Module
